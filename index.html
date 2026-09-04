@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- MB1 PRICING FAILSAFE v3 -->
+<!-- MB1 SIMPLE PRICING v4 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -75,9 +75,7 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 <option value="30" data-price="195">30&quot; — $195</option>
 <option value="36" data-price="265">36&quot; — $265</option>
 <option value="48" data-price="349">48&quot; — $349</option></select>
-        <div id="modalPrice" class="live-price">$49</div>
-        <div class="price-note">Price changes automatically with selected size.</div>
-      </div>
+              </div>
 
       <a id="modalQuote" class="quote-btn" href="#" target="_blank" rel="noopener">Customize / Request Quote</a>
     </div>
@@ -93,8 +91,7 @@ count=document.getElementById('count');
 const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg'),
 modalName=document.getElementById('modalName'), modalCat=document.getElementById('modalCat'),
 modalMeta=document.getElementById('modalMeta'), modalDesc=document.getElementById('modalDesc'),
-modalQuote=document.getElementById('modalQuote'), modalSize=document.getElementById('modalSize'),
-modalPrice=document.getElementById('modalPrice');
+modalQuote=document.getElementById('modalQuote'), modalSize=document.getElementById('modalSize');
 
 let currentDesign='';
 
@@ -130,19 +127,6 @@ function render(){
     </article>`).join('');
 }
 
-function updateLivePrice(){
-  const selected = modalSize.options[modalSize.selectedIndex];
-  const price = selected ? selected.getAttribute('data-price') : '';
-  const size = selected ? selected.value : '';
-
-  modalPrice.textContent = price ? '$' + price : '';
-
-  if (size && price) {
-    modalQuote.textContent = 'Customize / Request Quote — ' + size + '" · $' + price;
-  } else {
-    modalQuote.textContent = 'Customize / Request Quote';
-  }
-}
 
 function openProduct(id){
   const p=PRODUCTS.find(x=>x.design===id); if(!p)return;
@@ -152,10 +136,8 @@ function openProduct(id){
   modalDesc.textContent=p.description;
   modalSize.value='8';
   modalQuote.href=quoteUrl(p.design);
-  updateLivePrice();
   modal.classList.add('open');
 }
-modalSize.addEventListener('change',updateLivePrice);
 document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
 search.addEventListener('input',render); category.addEventListener('change',render);

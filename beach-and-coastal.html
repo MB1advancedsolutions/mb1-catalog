@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- MB1 PRICING FAILSAFE v3 -->
+<!-- MB1 SIMPLE PRICING v4 -->
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Beach And Coastal | MB1 Advanced Solutions</title><style>
@@ -274,9 +274,7 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 <option value="30" data-price="195">30&quot; — $195</option>
 <option value="36" data-price="265">36&quot; — $265</option>
 <option value="48" data-price="349">48&quot; — $349</option></select>
-        <div id="modalPrice" class="live-price">$49</div>
-        <div class="price-note">Price changes automatically with selected size.</div>
-      </div>
+              </div>
       <a id="modalQuote" class="quote-btn" href="#" target="_blank" rel="noopener">Customize / Request Quote</a>
     </div>
   </div>
@@ -287,23 +285,9 @@ const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI
 const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg'),
 modalName=document.getElementById('modalName'), modalCat=document.getElementById('modalCat'),
 modalMeta=document.getElementById('modalMeta'), modalDesc=document.getElementById('modalDesc'),
-modalQuote=document.getElementById('modalQuote'), modalSize=document.getElementById('modalSize'),
-modalPrice=document.getElementById('modalPrice');
+modalQuote=document.getElementById('modalQuote'), modalSize=document.getElementById('modalSize');
 let currentDesign='';
 
-function updateLivePrice(){
-  const selected = modalSize.options[modalSize.selectedIndex];
-  const price = selected ? selected.getAttribute('data-price') : '';
-  const size = selected ? selected.value : '';
-
-  modalPrice.textContent = price ? '$' + price : '';
-
-  if (size && price) {
-    modalQuote.textContent = 'Customize / Request Quote — ' + size + '" · $' + price;
-  } else {
-    modalQuote.textContent = 'Customize / Request Quote';
-  }
-}
 
 document.querySelectorAll('.view-button').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -313,11 +297,9 @@ document.querySelectorAll('.view-button').forEach(btn=>{
     modalDesc.textContent=d.desc;
     modalSize.value='8';
     modalQuote.href=FORM_BASE+encodeURIComponent('MB1-'+d.design);
-    updateLivePrice();
     modal.classList.add('open');
   });
 });
-modalSize.addEventListener('change',updateLivePrice);
 document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
 </script>
