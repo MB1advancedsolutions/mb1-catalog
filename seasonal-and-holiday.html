@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- MB1 PRICING FAILSAFE v3 -->
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Seasonal And Holiday | MB1 Advanced Solutions</title><style>
@@ -2506,7 +2507,6 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 
 <script>
 const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const PRICE_MAP={"8": 49, "12": 69, "18": 109, "24": 149, "30": 195, "36": 265, "48": 349};
 const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg'),
 modalName=document.getElementById('modalName'), modalCat=document.getElementById('modalCat'),
 modalMeta=document.getElementById('modalMeta'), modalDesc=document.getElementById('modalDesc'),
@@ -2515,9 +2515,17 @@ modalPrice=document.getElementById('modalPrice');
 let currentDesign='';
 
 function updateLivePrice(){
-  const price=PRICE_MAP[modalSize.value];
-  modalPrice.textContent='$'+price;
-  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+'\" · $'+price;
+  const selected = modalSize.options[modalSize.selectedIndex];
+  const price = selected ? selected.getAttribute('data-price') : '';
+  const size = selected ? selected.value : '';
+
+  modalPrice.textContent = price ? '$' + price : '';
+
+  if (size && price) {
+    modalQuote.textContent = 'Customize / Request Quote — ' + size + '" · $' + price;
+  } else {
+    modalQuote.textContent = 'Customize / Request Quote';
+  }
 }
 
 document.querySelectorAll('.view-button').forEach(btn=>{
@@ -2526,7 +2534,7 @@ document.querySelectorAll('.view-button').forEach(btn=>{
     modalImg.src=d.image; modalImg.alt=d.alt; modalName.textContent=d.name; modalCat.textContent=d.category;
     modalMeta.innerHTML=`<span class="pill">${d.sku}</span><span class="pill">Design ${d.design}</span>`;
     modalDesc.textContent=d.desc;
-    modalSize.value='12';
+    modalSize.value='8';
     modalQuote.href=FORM_BASE+encodeURIComponent('MB1-'+d.design);
     updateLivePrice();
     modal.classList.add('open');

@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- MB1 PRICING FAILSAFE v3 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -86,7 +87,6 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 <script>
 let PRODUCTS=[];
 const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const PRICE_MAP={"8": 49, "12": 69, "18": 109, "24": 149, "30": 195, "36": 265, "48": 349};
 const grid=document.getElementById('grid'), search=document.getElementById('search'),
 category=document.getElementById('category'), categoryButtons=document.getElementById('categoryButtons'),
 count=document.getElementById('count');
@@ -131,9 +131,17 @@ function render(){
 }
 
 function updateLivePrice(){
-  const price=PRICE_MAP[modalSize.value];
-  modalPrice.textContent='$'+price;
-  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+'\" · $'+price;
+  const selected = modalSize.options[modalSize.selectedIndex];
+  const price = selected ? selected.getAttribute('data-price') : '';
+  const size = selected ? selected.value : '';
+
+  modalPrice.textContent = price ? '$' + price : '';
+
+  if (size && price) {
+    modalQuote.textContent = 'Customize / Request Quote — ' + size + '" · $' + price;
+  } else {
+    modalQuote.textContent = 'Customize / Request Quote';
+  }
 }
 
 function openProduct(id){
@@ -142,7 +150,7 @@ function openProduct(id){
   modalImg.src=p.image; modalImg.alt=p.alt; modalName.textContent=p.name; modalCat.textContent=p.category;
   modalMeta.innerHTML=`<span class="pill">${esc(p.sku)}</span><span class="pill">Design ${esc(p.design)}</span>`;
   modalDesc.textContent=p.description;
-  modalSize.value='12';
+  modalSize.value='8';
   modalQuote.href=quoteUrl(p.design);
   updateLivePrice();
   modal.classList.add('open');
