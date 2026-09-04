@@ -1,31 +1,44 @@
-MB1 CATEGORY PAGES — SIMPLE CANVA LINKS
+MB1 SIZE-BASED PRICING UPDATE
 
-This package adds ONE separate GitHub page for each category.
+PRICE SCHEDULE BUILT INTO THIS RELEASE
+8"  = $49
+12" = $69
+18" = $109
+24" = $149
+30" = $195
+36" = $265
+48" = $349
 
-DO NOT replace index.html.
+WHAT CHANGES
+- Product cards now say "From $49".
+- Click View Design.
+- Customer chooses a size.
+- Price changes instantly.
+- The Customize / Request Quote button displays the selected size and price.
+- All 12 direct Canva category pages use the same pricing.
 
-HOW TO ADD THEM:
-1. Open this ZIP.
-2. Copy all 12 .html category files into your existing local mb1-catalog folder.
-3. Do NOT delete or replace index.html.
-4. Open GitHub Desktop.
-5. You should see 12 new .html files.
-6. If .DS_Store appears, uncheck it.
-7. Summary: Add category pages
-8. Click Commit to main.
-9. Click Push origin.
+FILES TO REPLACE IN YOUR LOCAL mb1-catalog FOLDER
+- index.html
+- all 12 category .html files
 
-THEN YOUR LINKS ARE EASY.
+DO NOT REPLACE
+- catalog-data.json
+- catalog.css
+- catalog.js
 
-If your normal catalog is:
-https://YOURNAME.github.io/mb1-catalog/
+GITHUB DESKTOP
+1. Copy these HTML files into your local mb1-catalog folder.
+2. Choose Replace when asked.
+3. Open GitHub Desktop.
+4. Leave the HTML files checked.
+5. Uncheck .DS_Store if it appears.
+6. Summary: Add size based pricing
+7. Commit to main.
+8. Push origin.
+9. Open your live catalog and force refresh:
+   Mac: Command + Shift + R
 
-Family & Name will be:
-https://YOURNAME.github.io/mb1-catalog/family-and-name.html
-
-Wildlife & Outdoors will be:
-https://YOURNAME.github.io/mb1-catalog/wildlife-and-outdoors.html
-
-You can open each new category page directly and copy its address into the matching Canva button.
-
-Use CATEGORY_FILE_LIST.txt to see every category filename.
+MARKET BASIS
+These prices are intended as practical market-positioned retail prices for personalized,
+laser/CNC-cut, powder-coated metal signs. They are based on current comparable online
+seller pricing rather than cheap printed aluminum signage or temporary deep-sale pricing.

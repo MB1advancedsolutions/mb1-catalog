@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Address And Property | MB1 Advanced Solutions</title>
-<style>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Address And Property | MB1 Advanced Solutions</title><style>
 :root{--ink:#1f2833;--muted:#68727b;--line:#d8dde0;--soft:#f5f6f4;--dark:#18212a;--accent:#53695b}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef1f3;color:var(--ink)}
-header{background:var(--dark);color:#fff;padding:24px}
+header{background:var(--dark);color:#fff;padding:24px;position:sticky;top:0;z-index:20}
 .head{max-width:1450px;margin:auto}.brand{font-weight:700;font-size:23px}.sub{color:#cbd3d9;font-size:13px;margin-top:5px}
 main{max-width:1450px;margin:auto;padding:24px}
 .hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;margin-bottom:18px}
 .hero h1{margin:0 0 7px;font-size:34px}.hero p{margin:0;color:var(--muted);line-height:1.5}
-.back{display:inline-block;margin-bottom:15px;color:var(--ink);font-weight:700}
+.category-section{margin:18px 0 20px}.category-title{font-size:18px;font-weight:700;margin-bottom:10px}
+.category-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.category-btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font-size:13px;cursor:pointer}
+.category-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.controls{display:grid;grid-template-columns:1fr 300px;gap:12px;margin:18px 0}
+input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px;background:#fff;font-size:15px}
+.summary{color:var(--muted);font-size:14px;margin-bottom:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 3px 12px rgba(20,30,40,.05)}
 .art{aspect-ratio:1/1;background:var(--soft);padding:13px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
@@ -22,384 +25,249 @@ main{max-width:1450px;margin:auto;padding:24px}
 .name{font-size:17px;font-weight:700;line-height:1.2;margin-top:7px;min-height:41px}
 .meta{font-size:12px;color:var(--muted);line-height:1.55;margin-top:9px}.price{font-weight:700;color:var(--ink)}
 .view-button{display:block;width:100%;border:0;border-radius:9px;padding:11px 12px;margin-top:12px;background:var(--dark);color:#fff;font-weight:700;cursor:pointer}
+.back{display:inline-block;margin-bottom:15px;color:var(--ink);font-weight:700}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.60);z-index:100;padding:20px;overflow:auto}
 .modal.open{display:flex;align-items:center;justify-content:center}
-.modal-box{background:#fff;max-width:900px;width:100%;border-radius:18px;padding:24px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.modal-box{background:#fff;max-width:900px;width:100%;border-radius:18px;padding:24px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
 .product-image-wrap{background:var(--soft);border-radius:14px;min-height:420px;display:flex;align-items:center;justify-content:center;padding:18px}
 .product-image-wrap img{width:100%;max-height:620px;object-fit:contain}
 .close{position:absolute;right:12px;top:10px;border:0;border-radius:8px;padding:7px 10px;background:#eee;color:#222;cursor:pointer;font-size:16px}
 .detail h2{font-size:30px;line-height:1.12;margin:8px 0 12px}.detail p{color:var(--muted);line-height:1.55}
-.pill{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);margin:3px}
-.quote-btn{display:flex;width:100%;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:14px 16px;font-weight:700;text-decoration:none;margin-top:20px}
-@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main{padding:12px}.modal-box{grid-template-columns:1fr}}
-</style>
-</head>
+.pills{margin:12px 0}.pill{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);margin:3px}
+.size-box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:18px}
+.size-box label{display:block;font-weight:700;margin-bottom:8px}
+.live-price{font-size:30px;font-weight:700;margin-top:12px}
+.price-note{font-size:12px;color:var(--muted);margin-top:4px}
+.quote-btn{display:flex;width:100%;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:14px 16px;font-weight:700;text-decoration:none;margin-top:18px}
+@media(max-width:700px){header{position:static}.controls{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main{padding:12px}.info{padding:10px}.name{font-size:14px;min-height:34px}.modal-box{grid-template-columns:1fr}.product-image-wrap{min-height:300px}}
+</style></head>
 <body>
 <header><div class="head"><div class="brand">MB1 ADVANCED SOLUTIONS</div><div class="sub">Custom fabrication · personalized metal signs</div></div></header>
 <main>
-  <a class="back" href="index.html">← Back to All Designs</a>
-  <section class="hero">
-    <h1>Address And Property</h1>
-    <p>17 designs in this category.</p>
-  </section>
-  <section class="grid">
+<a class="back" href="index.html">← Back to All Designs</a>
+<section class="hero"><h1>Address And Property</h1><p>17 designs in this category.</p></section>
+<section class="grid">
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350180/0843_Address_Welcome_Plaque.png" alt="Address Welcome Plaque custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">Address Welcome Plaque</div>
-    <div class="meta">MB1-0843<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0843<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0843"
-      data-name="Address Welcome Plaque"
-      data-category="address and property"
-      data-sku="MB1-0843"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350180/0843_Address_Welcome_Plaque.png"
-      data-alt="Address Welcome Plaque custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0843.">
-      View Design
-    </button>
+      data-design="0843" data-name="Address Welcome Plaque"
+      data-category="address and property" data-sku="MB1-0843"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350180/0843_Address_Welcome_Plaque.png" data-alt="Address Welcome Plaque custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0843.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350224/0868_Beware_of_dog.png" alt="Beware of dog custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">Beware of dog</div>
-    <div class="meta">MB1-0868<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0868<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0868"
-      data-name="Beware of dog"
-      data-category="address and property"
-      data-sku="MB1-0868"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350224/0868_Beware_of_dog.png"
-      data-alt="Beware of dog custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0868.">
-      View Design
-    </button>
+      data-design="0868" data-name="Beware of dog"
+      data-category="address and property" data-sku="MB1-0868"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350224/0868_Beware_of_dog.png" data-alt="Beware of dog custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0868.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350364/0947_Funny_no_tresspassing.png" alt="Funny no tresspassing custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">Funny no tresspassing</div>
-    <div class="meta">MB1-0947<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0947<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0947"
-      data-name="Funny no tresspassing"
-      data-category="address and property"
-      data-sku="MB1-0947"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350364/0947_Funny_no_tresspassing.png"
-      data-alt="Funny no tresspassing custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0947.">
-      View Design
-    </button>
+      data-design="0947" data-name="Funny no tresspassing"
+      data-category="address and property" data-sku="MB1-0947"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350364/0947_Funny_no_tresspassing.png" data-alt="Funny no tresspassing custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0947.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350507/1030_No_Trespassing_target.png" alt="No Trespassing target custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">No Trespassing target</div>
-    <div class="meta">MB1-1030<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1030<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1030"
-      data-name="No Trespassing target"
-      data-category="address and property"
-      data-sku="MB1-1030"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350507/1030_No_Trespassing_target.png"
-      data-alt="No Trespassing target custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1030.">
-      View Design
-    </button>
+      data-design="1030" data-name="No Trespassing target"
+      data-category="address and property" data-sku="MB1-1030"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350507/1030_No_Trespassing_target.png" data-alt="No Trespassing target custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1030.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350759/1175_Warning_you_are_now_in_range.png" alt="Warning you are now in range custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">Warning you are now in range</div>
-    <div class="meta">MB1-1175<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1175<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1175"
-      data-name="Warning you are now in range"
-      data-category="address and property"
-      data-sku="MB1-1175"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350759/1175_Warning_you_are_now_in_range.png"
-      data-alt="Warning you are now in range custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1175.">
-      View Design
-    </button>
+      data-design="1175" data-name="Warning you are now in range"
+      data-category="address and property" data-sku="MB1-1175"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350759/1175_Warning_you_are_now_in_range.png" data-alt="Warning you are now in range custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1175.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350810/1203_You_Are_Here_target.png" alt="You Are Here target custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">You Are Here target</div>
-    <div class="meta">MB1-1203<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1203<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1203"
-      data-name="You Are Here target"
-      data-category="address and property"
-      data-sku="MB1-1203"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350810/1203_You_Are_Here_target.png"
-      data-alt="You Are Here target custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1203.">
-      View Design
-    </button>
+      data-design="1203" data-name="You Are Here target"
+      data-category="address and property" data-sku="MB1-1203"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350810/1203_You_Are_Here_target.png" data-alt="You Are Here target custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1203.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350915/1261_PROTECTED_BY_AR-15.png" alt="PROTECTED BY AR-15 custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">PROTECTED BY AR-15</div>
-    <div class="meta">MB1-1261<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1261<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1261"
-      data-name="PROTECTED BY AR-15"
-      data-category="address and property"
-      data-sku="MB1-1261"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350915/1261_PROTECTED_BY_AR-15.png"
-      data-alt="PROTECTED BY AR-15 custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1261.">
-      View Design
-    </button>
+      data-design="1261" data-name="PROTECTED BY AR-15"
+      data-category="address and property" data-sku="MB1-1261"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350915/1261_PROTECTED_BY_AR-15.png" data-alt="PROTECTED BY AR-15 custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1261.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350945/1277_fence_warning_sign.png" alt="fence warning sign custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">fence warning sign</div>
-    <div class="meta">MB1-1277<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1277<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1277"
-      data-name="fence warning sign"
-      data-category="address and property"
-      data-sku="MB1-1277"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350945/1277_fence_warning_sign.png"
-      data-alt="fence warning sign custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1277.">
-      View Design
-    </button>
+      data-design="1277" data-name="fence warning sign"
+      data-category="address and property" data-sku="MB1-1277"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350945/1277_fence_warning_sign.png" data-alt="fence warning sign custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1277.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351514/1596_2nd_security_1789.png" alt="2nd security 1789 custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">2nd security 1789</div>
-    <div class="meta">MB1-1596<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1596<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1596"
-      data-name="2nd security 1789"
-      data-category="address and property"
-      data-sku="MB1-1596"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351514/1596_2nd_security_1789.png"
-      data-alt="2nd security 1789 custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1596.">
-      View Design
-    </button>
+      data-design="1596" data-name="2nd security 1789"
+      data-category="address and property" data-sku="MB1-1596"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351514/1596_2nd_security_1789.png" data-alt="2nd security 1789 custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1596.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351516/1597_AR-15_911.png" alt="AR-15 911 custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">AR-15 911</div>
-    <div class="meta">MB1-1597<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1597<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1597"
-      data-name="AR-15 911"
-      data-category="address and property"
-      data-sku="MB1-1597"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351516/1597_AR-15_911.png"
-      data-alt="AR-15 911 custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1597.">
-      View Design
-    </button>
+      data-design="1597" data-name="AR-15 911"
+      data-category="address and property" data-sku="MB1-1597"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351516/1597_AR-15_911.png" data-alt="AR-15 911 custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1597.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351518/1598_Wife_Warning_Sign.png" alt="Wife Warning Sign custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">Wife Warning Sign</div>
-    <div class="meta">MB1-1598<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1598<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1598"
-      data-name="Wife Warning Sign"
-      data-category="address and property"
-      data-sku="MB1-1598"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351518/1598_Wife_Warning_Sign.png"
-      data-alt="Wife Warning Sign custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1598.">
-      View Design
-    </button>
+      data-design="1598" data-name="Wife Warning Sign"
+      data-category="address and property" data-sku="MB1-1598"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351518/1598_Wife_Warning_Sign.png" data-alt="Wife Warning Sign custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1598.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351522/1602_funny_trespassing_sign.png" alt="funny trespassing sign custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">funny trespassing sign</div>
-    <div class="meta">MB1-1602<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1602<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1602"
-      data-name="funny trespassing sign"
-      data-category="address and property"
-      data-sku="MB1-1602"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351522/1602_funny_trespassing_sign.png"
-      data-alt="funny trespassing sign custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1602.">
-      View Design
-    </button>
+      data-design="1602" data-name="funny trespassing sign"
+      data-category="address and property" data-sku="MB1-1602"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351522/1602_funny_trespassing_sign.png" data-alt="funny trespassing sign custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1602.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351528/1605_no_trespassing.png" alt="no trespassing custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">no trespassing</div>
-    <div class="meta">MB1-1605<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1605<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1605"
-      data-name="no trespassing"
-      data-category="address and property"
-      data-sku="MB1-1605"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351528/1605_no_trespassing.png"
-      data-alt="no trespassing custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1605.">
-      View Design
-    </button>
+      data-design="1605" data-name="no trespassing"
+      data-category="address and property" data-sku="MB1-1605"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351528/1605_no_trespassing.png" data-alt="no trespassing custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1605.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351530/1606_protected_by_second_amendment.png" alt="protected by second amendment custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">protected by second amendment</div>
-    <div class="meta">MB1-1606<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1606<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1606"
-      data-name="protected by second amendment"
-      data-category="address and property"
-      data-sku="MB1-1606"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351530/1606_protected_by_second_amendment.png"
-      data-alt="protected by second amendment custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1606.">
-      View Design
-    </button>
+      data-design="1606" data-name="protected by second amendment"
+      data-category="address and property" data-sku="MB1-1606"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351530/1606_protected_by_second_amendment.png" data-alt="protected by second amendment custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1606.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351535/1610_warning_alarm.png" alt="warning alarm custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">warning alarm</div>
-    <div class="meta">MB1-1610<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1610<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1610"
-      data-name="warning alarm"
-      data-category="address and property"
-      data-sku="MB1-1610"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351535/1610_warning_alarm.png"
-      data-alt="warning alarm custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1610.">
-      View Design
-    </button>
+      data-design="1610" data-name="warning alarm"
+      data-category="address and property" data-sku="MB1-1610"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351535/1610_warning_alarm.png" data-alt="warning alarm custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1610.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351539/1612_you_are_in_range.png" alt="you are in range custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">you are in range</div>
-    <div class="meta">MB1-1612<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1612<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1612"
-      data-name="you are in range"
-      data-category="address and property"
-      data-sku="MB1-1612"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351539/1612_you_are_in_range.png"
-      data-alt="you are in range custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1612.">
-      View Design
-    </button>
+      data-design="1612" data-name="you are in range"
+      data-category="address and property" data-sku="MB1-1612"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351539/1612_you_are_in_range.png" data-alt="you are in range custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1612.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351541/1613_you_are_now_in_range.png" alt="you are now in range custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">address and property</div>
     <div class="name">you are now in range</div>
-    <div class="meta">MB1-1613<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1613<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1613"
-      data-name="you are now in range"
-      data-category="address and property"
-      data-sku="MB1-1613"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351541/1613_you_are_now_in_range.png"
-      data-alt="you are now in range custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1613.">
-      View Design
-    </button>
+      data-design="1613" data-name="you are now in range"
+      data-category="address and property" data-sku="MB1-1613"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351541/1613_you_are_now_in_range.png" data-alt="you are now in range custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1613.">View Design</button>
   </div>
-</article>
-</section>
+</article></section>
 </main>
 
 <div id="modal" class="modal">
@@ -407,47 +275,55 @@ main{max-width:1450px;margin:auto;padding:24px}
     <button id="closeModal" class="close">✕</button>
     <div class="product-image-wrap"><img id="modalImg" alt=""></div>
     <div class="detail">
-      <div id="modalCat" class="cat"></div>
-      <h2 id="modalName"></h2>
-      <div id="modalMeta"></div>
-      <p id="modalDesc"></p>
+      <div id="modalCat" class="cat"></div><h2 id="modalName"></h2>
+      <div id="modalMeta" class="pills"></div><p id="modalDesc"></p>
+      <div class="size-box">
+        <label for="modalSize">Choose Sign Size</label>
+        <select id="modalSize"><option value="8"" data-price="49">8" — $49</option>
+<option value="12"" data-price="69">12" — $69</option>
+<option value="18"" data-price="109">18" — $109</option>
+<option value="24"" data-price="149">24" — $149</option>
+<option value="30"" data-price="195">30" — $195</option>
+<option value="36"" data-price="265">36" — $265</option>
+<option value="48"" data-price="349">48" — $349</option></select>
+        <div id="modalPrice" class="live-price">$49</div>
+        <div class="price-note">Price changes automatically with selected size.</div>
+      </div>
       <a id="modalQuote" class="quote-btn" href="#" target="_blank" rel="noopener">Customize / Request Quote</a>
     </div>
   </div>
 </div>
 
 <script>
-const FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const modal = document.getElementById('modal');
-const modalImg = document.getElementById('modalImg');
-const modalName = document.getElementById('modalName');
-const modalCat = document.getElementById('modalCat');
-const modalMeta = document.getElementById('modalMeta');
-const modalDesc = document.getElementById('modalDesc');
-const modalQuote = document.getElementById('modalQuote');
+const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
+const PRICE_MAP={"8\"": 49, "12\"": 69, "18\"": 109, "24\"": 149, "30\"": 195, "36\"": 265, "48\"": 349};
+const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg'),
+modalName=document.getElementById('modalName'), modalCat=document.getElementById('modalCat'),
+modalMeta=document.getElementById('modalMeta'), modalDesc=document.getElementById('modalDesc'),
+modalQuote=document.getElementById('modalQuote'), modalSize=document.getElementById('modalSize'),
+modalPrice=document.getElementById('modalPrice');
+let currentDesign='';
 
-document.querySelectorAll('.view-button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const d = btn.dataset;
-    modalImg.src = d.image;
-    modalImg.alt = d.alt;
-    modalName.textContent = d.name;
-    modalCat.textContent = d.category;
-    modalMeta.innerHTML = `
-      <span class="pill">${d.sku}</span>
-      <span class="pill">Design ${d.design}</span>
-      <span class="pill">${d.sizes}</span>
-      <span class="pill">Starting at $${d.price}</span>
-    `;
-    modalDesc.textContent = d.desc;
-    modalQuote.href = FORM_BASE + encodeURIComponent('MB1-' + d.design);
-    modalQuote.textContent = 'Customize / Request Quote for MB1-' + d.design;
+function updateLivePrice(){
+  const price=PRICE_MAP[modalSize.value];
+  modalPrice.textContent='$'+price;
+  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+' · $'+price;
+}
+
+document.querySelectorAll('.view-button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const d=btn.dataset; currentDesign=d.design;
+    modalImg.src=d.image; modalImg.alt=d.alt; modalName.textContent=d.name; modalCat.textContent=d.category;
+    modalMeta.innerHTML=`<span class="pill">${d.sku}</span><span class="pill">Design ${d.design}</span>`;
+    modalDesc.textContent=d.desc;
+    modalSize.value='12"';
+    modalQuote.href=FORM_BASE+encodeURIComponent('MB1-'+d.design);
+    updateLivePrice();
     modal.classList.add('open');
   });
 });
-
-document.getElementById('closeModal').onclick = () => modal.classList.remove('open');
-modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+modalSize.addEventListener('change',updateLivePrice);
+document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
 </script>
-</body>
-</html>
+</body></html>

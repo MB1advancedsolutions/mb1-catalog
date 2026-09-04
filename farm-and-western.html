@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Farm And Western | MB1 Advanced Solutions</title>
-<style>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farm And Western | MB1 Advanced Solutions</title><style>
 :root{--ink:#1f2833;--muted:#68727b;--line:#d8dde0;--soft:#f5f6f4;--dark:#18212a;--accent:#53695b}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef1f3;color:var(--ink)}
-header{background:var(--dark);color:#fff;padding:24px}
+header{background:var(--dark);color:#fff;padding:24px;position:sticky;top:0;z-index:20}
 .head{max-width:1450px;margin:auto}.brand{font-weight:700;font-size:23px}.sub{color:#cbd3d9;font-size:13px;margin-top:5px}
 main{max-width:1450px;margin:auto;padding:24px}
 .hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;margin-bottom:18px}
 .hero h1{margin:0 0 7px;font-size:34px}.hero p{margin:0;color:var(--muted);line-height:1.5}
-.back{display:inline-block;margin-bottom:15px;color:var(--ink);font-weight:700}
+.category-section{margin:18px 0 20px}.category-title{font-size:18px;font-weight:700;margin-bottom:10px}
+.category-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.category-btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font-size:13px;cursor:pointer}
+.category-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.controls{display:grid;grid-template-columns:1fr 300px;gap:12px;margin:18px 0}
+input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px;background:#fff;font-size:15px}
+.summary{color:var(--muted);font-size:14px;margin-bottom:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 3px 12px rgba(20,30,40,.05)}
 .art{aspect-ratio:1/1;background:var(--soft);padding:13px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
@@ -22,678 +25,431 @@ main{max-width:1450px;margin:auto;padding:24px}
 .name{font-size:17px;font-weight:700;line-height:1.2;margin-top:7px;min-height:41px}
 .meta{font-size:12px;color:var(--muted);line-height:1.55;margin-top:9px}.price{font-weight:700;color:var(--ink)}
 .view-button{display:block;width:100%;border:0;border-radius:9px;padding:11px 12px;margin-top:12px;background:var(--dark);color:#fff;font-weight:700;cursor:pointer}
+.back{display:inline-block;margin-bottom:15px;color:var(--ink);font-weight:700}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.60);z-index:100;padding:20px;overflow:auto}
 .modal.open{display:flex;align-items:center;justify-content:center}
-.modal-box{background:#fff;max-width:900px;width:100%;border-radius:18px;padding:24px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.modal-box{background:#fff;max-width:900px;width:100%;border-radius:18px;padding:24px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
 .product-image-wrap{background:var(--soft);border-radius:14px;min-height:420px;display:flex;align-items:center;justify-content:center;padding:18px}
 .product-image-wrap img{width:100%;max-height:620px;object-fit:contain}
 .close{position:absolute;right:12px;top:10px;border:0;border-radius:8px;padding:7px 10px;background:#eee;color:#222;cursor:pointer;font-size:16px}
 .detail h2{font-size:30px;line-height:1.12;margin:8px 0 12px}.detail p{color:var(--muted);line-height:1.55}
-.pill{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);margin:3px}
-.quote-btn{display:flex;width:100%;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:14px 16px;font-weight:700;text-decoration:none;margin-top:20px}
-@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main{padding:12px}.modal-box{grid-template-columns:1fr}}
-</style>
-</head>
+.pills{margin:12px 0}.pill{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);margin:3px}
+.size-box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:18px}
+.size-box label{display:block;font-weight:700;margin-bottom:8px}
+.live-price{font-size:30px;font-weight:700;margin-top:12px}
+.price-note{font-size:12px;color:var(--muted);margin-top:4px}
+.quote-btn{display:flex;width:100%;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:10px;padding:14px 16px;font-weight:700;text-decoration:none;margin-top:18px}
+@media(max-width:700px){header{position:static}.controls{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main{padding:12px}.info{padding:10px}.name{font-size:14px;min-height:34px}.modal-box{grid-template-columns:1fr}.product-image-wrap{min-height:300px}}
+</style></head>
 <body>
 <header><div class="head"><div class="brand">MB1 ADVANCED SOLUTIONS</div><div class="sub">Custom fabrication · personalized metal signs</div></div></header>
 <main>
-  <a class="back" href="index.html">← Back to All Designs</a>
-  <section class="hero">
-    <h1>Farm And Western</h1>
-    <p>31 designs in this category.</p>
-  </section>
-  <section class="grid">
+<a class="back" href="index.html">← Back to All Designs</a>
+<section class="hero"><h1>Farm And Western</h1><p>31 designs in this category.</p></section>
+<section class="grid">
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350211/0863_Beef_cuts.png" alt="Beef cuts custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Beef cuts</div>
-    <div class="meta">MB1-0863<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0863<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0863"
-      data-name="Beef cuts"
-      data-category="farm and western"
-      data-sku="MB1-0863"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350211/0863_Beef_cuts.png"
-      data-alt="Beef cuts custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0863.">
-      View Design
-    </button>
+      data-design="0863" data-name="Beef cuts"
+      data-category="farm and western" data-sku="MB1-0863"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350211/0863_Beef_cuts.png" data-alt="Beef cuts custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0863.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350249/0883_Chicken_cuts.png" alt="Chicken cuts custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Chicken cuts</div>
-    <div class="meta">MB1-0883<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0883<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0883"
-      data-name="Chicken cuts"
-      data-category="farm and western"
-      data-sku="MB1-0883"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350249/0883_Chicken_cuts.png"
-      data-alt="Chicken cuts custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0883.">
-      View Design
-    </button>
+      data-design="0883" data-name="Chicken cuts"
+      data-category="farm and western" data-sku="MB1-0883"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350249/0883_Chicken_cuts.png" data-alt="Chicken cuts custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0883.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350269/0894_Country_Kitchen.png" alt="Country Kitchen custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Country Kitchen</div>
-    <div class="meta">MB1-0894<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0894<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0894"
-      data-name="Country Kitchen"
-      data-category="farm and western"
-      data-sku="MB1-0894"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350269/0894_Country_Kitchen.png"
-      data-alt="Country Kitchen custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0894.">
-      View Design
-    </button>
+      data-design="0894" data-name="Country Kitchen"
+      data-category="farm and western" data-sku="MB1-0894"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350269/0894_Country_Kitchen.png" data-alt="Country Kitchen custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0894.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350271/0895_Cow_skull_Spears_and_Campfire.png" alt="Cow skull Spears and Campfire custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Cow skull Spears and Campfire</div>
-    <div class="meta">MB1-0895<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0895<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0895"
-      data-name="Cow skull Spears and Campfire"
-      data-category="farm and western"
-      data-sku="MB1-0895"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350271/0895_Cow_skull_Spears_and_Campfire.png"
-      data-alt="Cow skull Spears and Campfire custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0895.">
-      View Design
-    </button>
+      data-design="0895" data-name="Cow skull Spears and Campfire"
+      data-category="farm and western" data-sku="MB1-0895"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350271/0895_Cow_skull_Spears_and_Campfire.png" data-alt="Cow skull Spears and Campfire custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0895.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350316/0921_End_of_the_trail_silhouette.png" alt="End of the trail silhouette custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">End of the trail silhouette</div>
-    <div class="meta">MB1-0921<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0921<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0921"
-      data-name="End of the trail silhouette"
-      data-category="farm and western"
-      data-sku="MB1-0921"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350316/0921_End_of_the_trail_silhouette.png"
-      data-alt="End of the trail silhouette custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0921.">
-      View Design
-    </button>
+      data-design="0921" data-name="End of the trail silhouette"
+      data-category="farm and western" data-sku="MB1-0921"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350316/0921_End_of_the_trail_silhouette.png" data-alt="End of the trail silhouette custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0921.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350318/0922_End_of_the_trail.png" alt="End of the trail custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">End of the trail</div>
-    <div class="meta">MB1-0922<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0922<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0922"
-      data-name="End of the trail"
-      data-category="farm and western"
-      data-sku="MB1-0922"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350318/0922_End_of_the_trail.png"
-      data-alt="End of the trail custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0922.">
-      View Design
-    </button>
+      data-design="0922" data-name="End of the trail"
+      data-category="farm and western" data-sku="MB1-0922"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350318/0922_End_of_the_trail.png" data-alt="End of the trail custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0922.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350329/0928_Farm_Fresh_Bacon.png" alt="Farm Fresh Bacon custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Farm Fresh Bacon</div>
-    <div class="meta">MB1-0928<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0928<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0928"
-      data-name="Farm Fresh Bacon"
-      data-category="farm and western"
-      data-sku="MB1-0928"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350329/0928_Farm_Fresh_Bacon.png"
-      data-alt="Farm Fresh Bacon custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0928.">
-      View Design
-    </button>
+      data-design="0928" data-name="Farm Fresh Bacon"
+      data-category="farm and western" data-sku="MB1-0928"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350329/0928_Farm_Fresh_Bacon.png" data-alt="Farm Fresh Bacon custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0928.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350331/0929_Farm_Fresh_Beef.png" alt="Farm Fresh Beef custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Farm Fresh Beef</div>
-    <div class="meta">MB1-0929<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0929<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0929"
-      data-name="Farm Fresh Beef"
-      data-category="farm and western"
-      data-sku="MB1-0929"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350331/0929_Farm_Fresh_Beef.png"
-      data-alt="Farm Fresh Beef custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0929.">
-      View Design
-    </button>
+      data-design="0929" data-name="Farm Fresh Beef"
+      data-category="farm and western" data-sku="MB1-0929"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350331/0929_Farm_Fresh_Beef.png" data-alt="Farm Fresh Beef custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0929.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350335/0931_Farm_Fresh_Eggs.png" alt="Farm Fresh Eggs custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Farm Fresh Eggs</div>
-    <div class="meta">MB1-0931<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0931<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0931"
-      data-name="Farm Fresh Eggs"
-      data-category="farm and western"
-      data-sku="MB1-0931"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350335/0931_Farm_Fresh_Eggs.png"
-      data-alt="Farm Fresh Eggs custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0931.">
-      View Design
-    </button>
+      data-design="0931" data-name="Farm Fresh Eggs"
+      data-category="farm and western" data-sku="MB1-0931"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350335/0931_Farm_Fresh_Eggs.png" data-alt="Farm Fresh Eggs custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0931.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350337/0932_Farm_Fresh.png" alt="Farm Fresh custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Farm Fresh</div>
-    <div class="meta">MB1-0932<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0932<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0932"
-      data-name="Farm Fresh"
-      data-category="farm and western"
-      data-sku="MB1-0932"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350337/0932_Farm_Fresh.png"
-      data-alt="Farm Fresh custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0932.">
-      View Design
-    </button>
+      data-design="0932" data-name="Farm Fresh"
+      data-category="farm and western" data-sku="MB1-0932"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350337/0932_Farm_Fresh.png" data-alt="Farm Fresh custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0932.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350338/0933_Farmers_Market.png" alt="Farmers Market custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Farmers Market</div>
-    <div class="meta">MB1-0933<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0933<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0933"
-      data-name="Farmers Market"
-      data-category="farm and western"
-      data-sku="MB1-0933"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350338/0933_Farmers_Market.png"
-      data-alt="Farmers Market custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0933.">
-      View Design
-    </button>
+      data-design="0933" data-name="Farmers Market"
+      data-category="farm and western" data-sku="MB1-0933"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350338/0933_Farmers_Market.png" data-alt="Farmers Market custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0933.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350340/0934_Farmhouse.png" alt="Farmhouse custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Farmhouse</div>
-    <div class="meta">MB1-0934<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0934<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0934"
-      data-name="Farmhouse"
-      data-category="farm and western"
-      data-sku="MB1-0934"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350340/0934_Farmhouse.png"
-      data-alt="Farmhouse custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0934.">
-      View Design
-    </button>
+      data-design="0934" data-name="Farmhouse"
+      data-category="farm and western" data-sku="MB1-0934"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350340/0934_Farmhouse.png" data-alt="Farmhouse custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0934.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350406/0970_Horseshoe_Welcome_sign.png" alt="Horseshoe Welcome sign custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Horseshoe Welcome sign</div>
-    <div class="meta">MB1-0970<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-0970<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="0970"
-      data-name="Horseshoe Welcome sign"
-      data-category="farm and western"
-      data-sku="MB1-0970"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350406/0970_Horseshoe_Welcome_sign.png"
-      data-alt="Horseshoe Welcome sign custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0970.">
-      View Design
-    </button>
+      data-design="0970" data-name="Horseshoe Welcome sign"
+      data-category="farm and western" data-sku="MB1-0970"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350406/0970_Horseshoe_Welcome_sign.png" data-alt="Horseshoe Welcome sign custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 0970.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350539/1049_Pork_cuts_butchers_diagram.png" alt="Pork cuts butchers diagram custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Pork cuts butchers diagram</div>
-    <div class="meta">MB1-1049<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1049<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1049"
-      data-name="Pork cuts butchers diagram"
-      data-category="farm and western"
-      data-sku="MB1-1049"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350539/1049_Pork_cuts_butchers_diagram.png"
-      data-alt="Pork cuts butchers diagram custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1049.">
-      View Design
-    </button>
+      data-design="1049" data-name="Pork cuts butchers diagram"
+      data-category="farm and western" data-sku="MB1-1049"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350539/1049_Pork_cuts_butchers_diagram.png" data-alt="Pork cuts butchers diagram custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1049.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350589/1076_Skeleton_guitarist_with_cowboy_hat.png" alt="Skeleton guitarist with cowboy hat custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Skeleton guitarist with cowboy hat</div>
-    <div class="meta">MB1-1076<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1076<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1076"
-      data-name="Skeleton guitarist with cowboy hat"
-      data-category="farm and western"
-      data-sku="MB1-1076"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350589/1076_Skeleton_guitarist_with_cowboy_hat.png"
-      data-alt="Skeleton guitarist with cowboy hat custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1076.">
-      View Design
-    </button>
+      data-design="1076" data-name="Skeleton guitarist with cowboy hat"
+      data-category="farm and western" data-sku="MB1-1076"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350589/1076_Skeleton_guitarist_with_cowboy_hat.png" data-alt="Skeleton guitarist with cowboy hat custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1076.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350823/1210_cowboy_skull_and_guns.png" alt="cowboy skull and guns custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">cowboy skull and guns</div>
-    <div class="meta">MB1-1210<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1210<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1210"
-      data-name="cowboy skull and guns"
-      data-category="farm and western"
-      data-sku="MB1-1210"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350823/1210_cowboy_skull_and_guns.png"
-      data-alt="cowboy skull and guns custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1210.">
-      View Design
-    </button>
+      data-design="1210" data-name="cowboy skull and guns"
+      data-category="farm and western" data-sku="MB1-1210"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350823/1210_cowboy_skull_and_guns.png" data-alt="cowboy skull and guns custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1210.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350825/1211_cowboy_skull.png" alt="cowboy skull custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">cowboy skull</div>
-    <div class="meta">MB1-1211<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1211<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1211"
-      data-name="cowboy skull"
-      data-category="farm and western"
-      data-sku="MB1-1211"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350825/1211_cowboy_skull.png"
-      data-alt="cowboy skull custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1211.">
-      View Design
-    </button>
+      data-design="1211" data-name="cowboy skull"
+      data-category="farm and western" data-sku="MB1-1211"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350825/1211_cowboy_skull.png" data-alt="cowboy skull custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1211.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350879/1241_rooster_wind_vane.png" alt="rooster wind vane custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">rooster wind vane</div>
-    <div class="meta">MB1-1241<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1241<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1241"
-      data-name="rooster wind vane"
-      data-category="farm and western"
-      data-sku="MB1-1241"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350879/1241_rooster_wind_vane.png"
-      data-alt="rooster wind vane custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1241.">
-      View Design
-    </button>
+      data-design="1241" data-name="rooster wind vane"
+      data-category="farm and western" data-sku="MB1-1241"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350879/1241_rooster_wind_vane.png" data-alt="rooster wind vane custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1241.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350883/1243_sugar_bull_skull.png" alt="sugar bull skull custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">sugar bull skull</div>
-    <div class="meta">MB1-1243<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1243<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1243"
-      data-name="sugar bull skull"
-      data-category="farm and western"
-      data-sku="MB1-1243"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350883/1243_sugar_bull_skull.png"
-      data-alt="sugar bull skull custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1243.">
-      View Design
-    </button>
+      data-design="1243" data-name="sugar bull skull"
+      data-category="farm and western" data-sku="MB1-1243"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350883/1243_sugar_bull_skull.png" data-alt="sugar bull skull custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1243.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350919/1263_SAW_BLADE_HORSE.png" alt="SAW BLADE HORSE custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">SAW BLADE HORSE</div>
-    <div class="meta">MB1-1263<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1263<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1263"
-      data-name="SAW BLADE HORSE"
-      data-category="farm and western"
-      data-sku="MB1-1263"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350919/1263_SAW_BLADE_HORSE.png"
-      data-alt="SAW BLADE HORSE custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1263.">
-      View Design
-    </button>
+      data-design="1263" data-name="SAW BLADE HORSE"
+      data-category="farm and western" data-sku="MB1-1263"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350919/1263_SAW_BLADE_HORSE.png" data-alt="SAW BLADE HORSE custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1263.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788350937/1273_bull_dog_trespassers.png" alt="bull dog trespassers custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">bull dog trespassers</div>
-    <div class="meta">MB1-1273<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1273<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1273"
-      data-name="bull dog trespassers"
-      data-category="farm and western"
-      data-sku="MB1-1273"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350937/1273_bull_dog_trespassers.png"
-      data-alt="bull dog trespassers custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1273.">
-      View Design
-    </button>
+      data-design="1273" data-name="bull dog trespassers"
+      data-category="farm and western" data-sku="MB1-1273"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788350937/1273_bull_dog_trespassers.png" data-alt="bull dog trespassers custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1273.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351183/1416_Kokapel15.png" alt="Kokapel15 custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Kokapel15</div>
-    <div class="meta">MB1-1416<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1416<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1416"
-      data-name="Kokapel15"
-      data-category="farm and western"
-      data-sku="MB1-1416"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351183/1416_Kokapel15.png"
-      data-alt="Kokapel15 custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1416.">
-      View Design
-    </button>
+      data-design="1416" data-name="Kokapel15"
+      data-category="farm and western" data-sku="MB1-1416"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351183/1416_Kokapel15.png" data-alt="Kokapel15 custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1416.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351185/1417_Kokapeli.png" alt="Kokapeli custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Kokapeli</div>
-    <div class="meta">MB1-1417<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1417<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1417"
-      data-name="Kokapeli"
-      data-category="farm and western"
-      data-sku="MB1-1417"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351185/1417_Kokapeli.png"
-      data-alt="Kokapeli custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1417.">
-      View Design
-    </button>
+      data-design="1417" data-name="Kokapeli"
+      data-category="farm and western" data-sku="MB1-1417"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351185/1417_Kokapeli.png" data-alt="Kokapeli custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1417.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351187/1418_Kokop2.png" alt="Kokop2 custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">Kokop2</div>
-    <div class="meta">MB1-1418<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1418<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1418"
-      data-name="Kokop2"
-      data-category="farm and western"
-      data-sku="MB1-1418"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351187/1418_Kokop2.png"
-      data-alt="Kokop2 custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1418.">
-      View Design
-    </button>
+      data-design="1418" data-name="Kokop2"
+      data-category="farm and western" data-sku="MB1-1418"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351187/1418_Kokop2.png" data-alt="Kokop2 custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1418.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351195/1422_indianbear.png" alt="indianbear custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">indianbear</div>
-    <div class="meta">MB1-1422<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1422<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1422"
-      data-name="indianbear"
-      data-category="farm and western"
-      data-sku="MB1-1422"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351195/1422_indianbear.png"
-      data-alt="indianbear custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1422.">
-      View Design
-    </button>
+      data-design="1422" data-name="indianbear"
+      data-category="farm and western" data-sku="MB1-1422"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351195/1422_indianbear.png" data-alt="indianbear custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1422.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351196/1423_kieva_dancers.png" alt="kieva dancers custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">kieva dancers</div>
-    <div class="meta">MB1-1423<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1423<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1423"
-      data-name="kieva dancers"
-      data-category="farm and western"
-      data-sku="MB1-1423"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351196/1423_kieva_dancers.png"
-      data-alt="kieva dancers custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1423.">
-      View Design
-    </button>
+      data-design="1423" data-name="kieva dancers"
+      data-category="farm and western" data-sku="MB1-1423"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351196/1423_kieva_dancers.png" data-alt="kieva dancers custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1423.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351198/1424_kokaSunBurst.png" alt="kokaSunBurst custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">kokaSunBurst</div>
-    <div class="meta">MB1-1424<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1424<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1424"
-      data-name="kokaSunBurst"
-      data-category="farm and western"
-      data-sku="MB1-1424"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351198/1424_kokaSunBurst.png"
-      data-alt="kokaSunBurst custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1424.">
-      View Design
-    </button>
+      data-design="1424" data-name="kokaSunBurst"
+      data-category="farm and western" data-sku="MB1-1424"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351198/1424_kokaSunBurst.png" data-alt="kokaSunBurst custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1424.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351200/1425_kokap3aa.png" alt="kokap3aa custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">kokap3aa</div>
-    <div class="meta">MB1-1425<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1425<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1425"
-      data-name="kokap3aa"
-      data-category="farm and western"
-      data-sku="MB1-1425"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351200/1425_kokap3aa.png"
-      data-alt="kokap3aa custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1425.">
-      View Design
-    </button>
+      data-design="1425" data-name="kokap3aa"
+      data-category="farm and western" data-sku="MB1-1425"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351200/1425_kokap3aa.png" data-alt="kokap3aa custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1425.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351202/1426_koko.png" alt="koko custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">koko</div>
-    <div class="meta">MB1-1426<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1426<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1426"
-      data-name="koko"
-      data-category="farm and western"
-      data-sku="MB1-1426"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351202/1426_koko.png"
-      data-alt="koko custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1426.">
-      View Design
-    </button>
+      data-design="1426" data-name="koko"
+      data-category="farm and western" data-sku="MB1-1426"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351202/1426_koko.png" data-alt="koko custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1426.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351204/1427_spirtbear.png" alt="spirtbear custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">spirtbear</div>
-    <div class="meta">MB1-1427<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1427<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1427"
-      data-name="spirtbear"
-      data-category="farm and western"
-      data-sku="MB1-1427"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351204/1427_spirtbear.png"
-      data-alt="spirtbear custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1427.">
-      View Design
-    </button>
+      data-design="1427" data-name="spirtbear"
+      data-category="farm and western" data-sku="MB1-1427"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351204/1427_spirtbear.png" data-alt="spirtbear custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1427.">View Design</button>
   </div>
 </article>
-
 <article class="card">
   <div class="art"><img loading="lazy" src="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_500,h_500/v1788351580/1643_welcome_to_the_farm.png" alt="welcome to the farm custom metal sign design by MB1 Advanced Solutions"></div>
   <div class="info">
     <div class="cat">farm and western</div>
     <div class="name">welcome to the farm</div>
-    <div class="meta">MB1-1643<br><span class="price">Starting at $25</span> · 8&quot;-48&quot;</div>
+    <div class="meta">MB1-1643<br><span class="price">From $49</span> · 8&quot;–48&quot;</div>
     <button class="view-button"
-      data-design="1643"
-      data-name="welcome to the farm"
-      data-category="farm and western"
-      data-sku="MB1-1643"
-      data-sizes="8&quot;-48&quot;"
-      data-price="25"
-      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351580/1643_welcome_to_the_farm.png"
-      data-alt="welcome to the farm custom metal sign design by MB1 Advanced Solutions"
-      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1643.">
-      View Design
-    </button>
+      data-design="1643" data-name="welcome to the farm"
+      data-category="farm and western" data-sku="MB1-1643"
+      data-image="https://res.cloudinary.com/oxygre42/image/upload/f_auto,q_auto,c_pad,b_white,w_1200,h_1200/v1788351580/1643_welcome_to_the_farm.png" data-alt="welcome to the farm custom metal sign design by MB1 Advanced Solutions"
+      data-desc="Customizable MB1 metal sign design. Available in sizes from 8 to 48 inches. Design 1643.">View Design</button>
   </div>
-</article>
-</section>
+</article></section>
 </main>
 
 <div id="modal" class="modal">
@@ -701,47 +457,55 @@ main{max-width:1450px;margin:auto;padding:24px}
     <button id="closeModal" class="close">✕</button>
     <div class="product-image-wrap"><img id="modalImg" alt=""></div>
     <div class="detail">
-      <div id="modalCat" class="cat"></div>
-      <h2 id="modalName"></h2>
-      <div id="modalMeta"></div>
-      <p id="modalDesc"></p>
+      <div id="modalCat" class="cat"></div><h2 id="modalName"></h2>
+      <div id="modalMeta" class="pills"></div><p id="modalDesc"></p>
+      <div class="size-box">
+        <label for="modalSize">Choose Sign Size</label>
+        <select id="modalSize"><option value="8"" data-price="49">8" — $49</option>
+<option value="12"" data-price="69">12" — $69</option>
+<option value="18"" data-price="109">18" — $109</option>
+<option value="24"" data-price="149">24" — $149</option>
+<option value="30"" data-price="195">30" — $195</option>
+<option value="36"" data-price="265">36" — $265</option>
+<option value="48"" data-price="349">48" — $349</option></select>
+        <div id="modalPrice" class="live-price">$49</div>
+        <div class="price-note">Price changes automatically with selected size.</div>
+      </div>
       <a id="modalQuote" class="quote-btn" href="#" target="_blank" rel="noopener">Customize / Request Quote</a>
     </div>
   </div>
 </div>
 
 <script>
-const FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const modal = document.getElementById('modal');
-const modalImg = document.getElementById('modalImg');
-const modalName = document.getElementById('modalName');
-const modalCat = document.getElementById('modalCat');
-const modalMeta = document.getElementById('modalMeta');
-const modalDesc = document.getElementById('modalDesc');
-const modalQuote = document.getElementById('modalQuote');
+const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
+const PRICE_MAP={"8\"": 49, "12\"": 69, "18\"": 109, "24\"": 149, "30\"": 195, "36\"": 265, "48\"": 349};
+const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg'),
+modalName=document.getElementById('modalName'), modalCat=document.getElementById('modalCat'),
+modalMeta=document.getElementById('modalMeta'), modalDesc=document.getElementById('modalDesc'),
+modalQuote=document.getElementById('modalQuote'), modalSize=document.getElementById('modalSize'),
+modalPrice=document.getElementById('modalPrice');
+let currentDesign='';
 
-document.querySelectorAll('.view-button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const d = btn.dataset;
-    modalImg.src = d.image;
-    modalImg.alt = d.alt;
-    modalName.textContent = d.name;
-    modalCat.textContent = d.category;
-    modalMeta.innerHTML = `
-      <span class="pill">${d.sku}</span>
-      <span class="pill">Design ${d.design}</span>
-      <span class="pill">${d.sizes}</span>
-      <span class="pill">Starting at $${d.price}</span>
-    `;
-    modalDesc.textContent = d.desc;
-    modalQuote.href = FORM_BASE + encodeURIComponent('MB1-' + d.design);
-    modalQuote.textContent = 'Customize / Request Quote for MB1-' + d.design;
+function updateLivePrice(){
+  const price=PRICE_MAP[modalSize.value];
+  modalPrice.textContent='$'+price;
+  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+' · $'+price;
+}
+
+document.querySelectorAll('.view-button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const d=btn.dataset; currentDesign=d.design;
+    modalImg.src=d.image; modalImg.alt=d.alt; modalName.textContent=d.name; modalCat.textContent=d.category;
+    modalMeta.innerHTML=`<span class="pill">${d.sku}</span><span class="pill">Design ${d.design}</span>`;
+    modalDesc.textContent=d.desc;
+    modalSize.value='12"';
+    modalQuote.href=FORM_BASE+encodeURIComponent('MB1-'+d.design);
+    updateLivePrice();
     modal.classList.add('open');
   });
 });
-
-document.getElementById('closeModal').onclick = () => modal.classList.remove('open');
-modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+modalSize.addEventListener('change',updateLivePrice);
+document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
 </script>
-</body>
-</html>
+</body></html>
