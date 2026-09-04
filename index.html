@@ -103,10 +103,7 @@ function render(){
      <div class="cat">${esc(p.category)}</div>
      <div class="name">${esc(p.name)}</div>
      <div class="meta">${esc(p.sku)}<br><span class="price">Starting at $${esc(p.price)}</span> · ${esc(p.sizes)}</div>
-     <div class="actions">
-       <button onclick="openProduct('${esc(p.design)}')">View Design</button>
-       <a class="secondary" href="${quoteUrl(p.design)}" target="_blank" rel="noopener">Customize</a>
-     </div>
+     <button onclick="openProduct('${esc(p.design)}')">View Design</button>
    </div>
  </article>`).join('');
 }
