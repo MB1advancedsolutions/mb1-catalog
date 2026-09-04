@@ -1,29 +1,31 @@
-MB1 FIX — REPLACE THESE 3 FILES ONLY
+MB1 CATEGORY PAGES — SIMPLE CANVA LINKS
 
-1. Open your existing local mb1-catalog folder.
-2. Copy these three files into it:
-   - index.html
-   - catalog.css
-   - catalog.js
-3. Choose Replace when asked.
+This package adds ONE separate GitHub page for each category.
+
+DO NOT replace index.html.
+
+HOW TO ADD THEM:
+1. Open this ZIP.
+2. Copy all 12 .html category files into your existing local mb1-catalog folder.
+3. Do NOT delete or replace index.html.
 4. Open GitHub Desktop.
-5. Confirm all three files show under Changes.
-6. Summary: Fix Customize Request Quote button
-7. Click Commit to main.
-8. Click Push origin.
-9. Go to GitHub.com > your mb1-catalog repository > Actions.
-10. Wait for the latest Pages build to show a green checkmark.
-11. Open the live catalog in a NEW browser tab.
-12. Force-refresh:
-    Mac: Command + Shift + R
-    Windows: Ctrl + F5
+5. You should see 12 new .html files.
+6. If .DS_Store appears, uncheck it.
+7. Summary: Add category pages
+8. Click Commit to main.
+9. Click Push origin.
 
-EXPECTED RESULT
-On each product card you should see:
-- View Design
-- Customize
+THEN YOUR LINKS ARE EASY.
 
-Inside View Design you should see:
-- Customize / Request Quote for MB1-####
+If your normal catalog is:
+https://YOURNAME.github.io/mb1-catalog/
 
-The old sentence saying the button will be added should be gone.
+Family & Name will be:
+https://YOURNAME.github.io/mb1-catalog/family-and-name.html
+
+Wildlife & Outdoors will be:
+https://YOURNAME.github.io/mb1-catalog/wildlife-and-outdoors.html
+
+You can open each new category page directly and copy its address into the matching Canva button.
+
+Use CATEGORY_FILE_LIST.txt to see every category filename.
