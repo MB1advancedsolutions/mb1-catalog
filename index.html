@@ -6,37 +6,136 @@
 <title>MB1 Advanced Solutions Product Catalog</title>
 <meta name="description" content="Browse customizable MB1 Advanced Solutions metal sign designs.">
 <style>
-
-:root{--ink:#1e2832;--muted:#68727b;--line:#d8dde0;--soft:#f5f6f4;--dark:#18212a}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef1f3;color:var(--ink)}
+:root {
+  --ink:#1f2833;
+  --muted:#68727b;
+  --line:#d8dde0;
+  --soft:#f5f6f4;
+  --dark:#18212a;
+  --accent:#53695b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef1f3;color:var(--ink)}
 header{background:var(--dark);color:#fff;padding:24px;position:sticky;top:0;z-index:20}
-.head{max-width:1450px;margin:auto}.brand{font-weight:700;font-size:23px}.sub{color:#cbd3d9;font-size:13px;margin-top:5px}
-main{max-width:1450px;margin:auto;padding:24px}.hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;margin-bottom:18px}
-.hero h1{margin:0 0 7px;font-size:34px}.hero p{margin:0;color:var(--muted);line-height:1.5}
+.head{max-width:1450px;margin:auto}
+.brand{font-weight:700;font-size:23px}
+.sub{color:#cbd3d9;font-size:13px;margin-top:5px}
+
+main{max-width:1450px;margin:auto;padding:24px}
+.hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;margin-bottom:18px}
+.hero h1{margin:0 0 7px;font-size:34px}
+.hero p{margin:0;color:var(--muted);line-height:1.5}
+
 .controls{display:grid;grid-template-columns:1fr 300px;gap:12px;margin:18px 0}
-input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px;background:white;font-size:15px}
-.summary{color:var(--muted);font-size:14px;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px;background:#fff;font-size:15px}
+.summary{color:var(--muted);font-size:14px;margin-bottom:14px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 3px 12px rgba(20,30,40,.05)}
 .art{aspect-ratio:1/1;background:var(--soft);padding:13px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
-.art img{width:100%;height:100%;object-fit:contain}.info{padding:14px}.cat{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:.06em}
-.name{font-size:17px;font-weight:700;line-height:1.2;margin-top:7px;min-height:41px}.meta{font-size:12px;color:var(--muted);line-height:1.55;margin-top:9px}
-.price{font-weight:700;color:var(--ink)}button{border:0;border-radius:9px;padding:10px 12px;font-weight:700;cursor:pointer;margin-top:11px;width:100%;background:var(--dark);color:#fff}
+.art img{width:100%;height:100%;object-fit:contain}
+.info{padding:14px}
+.cat{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:.06em}
+.name{font-size:17px;font-weight:700;line-height:1.2;margin-top:7px;min-height:41px}
+.meta{font-size:12px;color:var(--muted);line-height:1.55;margin-top:9px}
+.price{font-weight:700;color:var(--ink)}
+
+.view-button{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:9px;
+  padding:11px 12px;
+  margin-top:12px;
+  background:var(--dark);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
 .empty{display:none;text-align:center;color:var(--muted);padding:50px}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:50;padding:20px;overflow:auto}
-.modal.open{display:flex;align-items:center;justify-content:center}.modal-box{background:#fff;max-width:880px;width:100%;border-radius:18px;padding:22px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.modal-box img{width:100%;height:auto;max-height:600px;object-fit:contain;background:var(--soft);border-radius:12px}.close{position:absolute;right:12px;top:10px;width:auto;margin:0;background:#eee;color:#222}
-.detail h2{font-size:29px;margin:8px 0}.detail p{color:var(--muted);line-height:1.55}.pill{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);margin:3px}
-.notice{background:#fff4d6;border:1px solid #ead9a2;border-radius:10px;padding:12px;margin-top:16px;font-size:13px;line-height:1.45}
-@media(max-width:700px){header{position:static}.controls{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main{padding:12px}.info{padding:10px}.name{font-size:14px;min-height:34px}.modal-box{grid-template-columns:1fr}}
 
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
-.actions button,.actions a{margin:0;width:100%;display:flex;align-items:center;justify-content:center;border-radius:9px;padding:10px 12px;font-weight:700;text-decoration:none}
-.actions .secondary{background:#eef1ef;color:#1f2833;border:1px solid #cfd6d1}
-.quote-btn{display:inline-flex;background:#53695b;color:#fff;border-radius:10px;padding:12px 18px;font-weight:700;text-decoration:none;margin-top:12px}
-@media(max-width:520px){.actions{grid-template-columns:1fr}}
+/* PRODUCT POPUP */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.60);
+  z-index:100;
+  padding:20px;
+  overflow:auto;
+}
+.modal.open{display:flex;align-items:center;justify-content:center}
+.modal-box{
+  background:#fff;
+  max-width:900px;
+  width:100%;
+  border-radius:18px;
+  padding:24px;
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.product-image-wrap{
+  background:var(--soft);
+  border-radius:14px;
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.product-image-wrap img{
+  width:100%;
+  max-height:620px;
+  object-fit:contain;
+}
+.close{
+  position:absolute;
+  right:12px;
+  top:10px;
+  width:auto;
+  border:0;
+  border-radius:8px;
+  padding:7px 10px;
+  background:#eee;
+  color:#222;
+  cursor:pointer;
+  font-size:16px;
+}
+.detail h2{font-size:30px;line-height:1.12;margin:8px 0 12px}
+.detail p{color:var(--muted);line-height:1.55}
+.pills{margin:12px 0 18px}
+.pill{display:inline-block;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);margin:3px}
+.quote-btn{
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:center;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  padding:14px 16px;
+  font-weight:700;
+  text-decoration:none;
+  margin-top:20px;
+}
 
+@media(max-width:700px){
+  header{position:static}
+  .controls{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  main{padding:12px}
+  .info{padding:10px}
+  .name{font-size:14px;min-height:34px}
+  .modal-box{grid-template-columns:1fr}
+  .product-image-wrap{min-height:300px}
+}
 </style>
 </head>
+
 <body>
 <header>
   <div class="head">
@@ -53,7 +152,9 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 
   <div class="controls">
     <input id="search" type="search" placeholder="Search designs…">
-    <select id="category"><option value="">All categories</option></select>
+    <select id="category">
+      <option value="">All categories</option>
+    </select>
   </div>
 
   <div id="count" class="summary"></div>
@@ -64,70 +165,147 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 <div id="modal" class="modal">
   <div class="modal-box">
     <button id="closeModal" class="close">✕</button>
-    <div><img id="modalImg" alt=""></div>
+
+    <div class="product-image-wrap">
+      <img id="modalImg" alt="">
+    </div>
+
     <div class="detail">
       <div id="modalCat" class="cat"></div>
       <h2 id="modalName"></h2>
-      <div id="modalMeta"></div>
+      <div id="modalMeta" class="pills"></div>
       <p id="modalDesc"></p>
+
       <a id="modalQuote" class="quote-btn" href="#" target="_blank" rel="noopener">
         Customize / Request Quote
       </a>
-      <div class="notice">
-        Your MB1 design number is filled into the request form automatically.
-        Complete the remaining customization details and submit the form.
-      </div>
     </div>
   </div>
 </div>
 
 <script>
+let PRODUCTS = [];
+const FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
 
-let PRODUCTS=[];
-const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const grid=document.getElementById('grid'),search=document.getElementById('search'),category=document.getElementById('category'),count=document.getElementById('count'),empty=document.getElementById('empty');
-const modal=document.getElementById('modal'),modalImg=document.getElementById('modalImg'),modalName=document.getElementById('modalName'),modalCat=document.getElementById('modalCat'),modalMeta=document.getElementById('modalMeta'),modalDesc=document.getElementById('modalDesc'),modalQuote=document.getElementById('modalQuote');
+const grid = document.getElementById('grid');
+const search = document.getElementById('search');
+const category = document.getElementById('category');
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
 
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-function quoteUrl(design){return FORM_BASE+encodeURIComponent('MB1-'+design);}
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const modalName = document.getElementById('modalName');
+const modalCat = document.getElementById('modalCat');
+const modalMeta = document.getElementById('modalMeta');
+const modalDesc = document.getElementById('modalDesc');
+const modalQuote = document.getElementById('modalQuote');
 
-function render(){
- const q=(search.value||'').trim().toLowerCase(),c=category.value||'';
- const filtered=PRODUCTS.filter(p=>{const hay=(p.design+' '+p.sku+' '+p.name+' '+p.category).toLowerCase();return(!q||hay.includes(q))&&(!c||p.category===c)});
- count.textContent=filtered.length.toLocaleString()+' designs shown';
- empty.style.display=filtered.length?'none':'block';
- grid.innerHTML=filtered.map(p=>`
- <article class="card">
-   <div class="art"><img loading="lazy" src="${esc(p.thumb)}" alt="${esc(p.alt)}"></div>
-   <div class="info">
-     <div class="cat">${esc(p.category)}</div>
-     <div class="name">${esc(p.name)}</div>
-     <div class="meta">${esc(p.sku)}<br><span class="price">Starting at $${esc(p.price)}</span> · ${esc(p.sizes)}</div>
-     <button onclick="openProduct('${esc(p.design)}')">View Design</button>
-   </div>
- </article>`).join('');
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, m => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#039;'
+  }[m]));
 }
 
-function openProduct(id){
- const p=PRODUCTS.find(x=>x.design===id);if(!p)return;
- modalImg.src=p.image;modalImg.alt=p.alt;modalName.textContent=p.name;modalCat.textContent=p.category;
- modalMeta.innerHTML=`<span class="pill">${esc(p.sku)}</span><span class="pill">Design ${esc(p.design)}</span><span class="pill">${esc(p.sizes)}</span><span class="pill">Starting at $${esc(p.price)}</span>`;
- modalDesc.textContent=p.description;
- modalQuote.href=quoteUrl(p.design);
- modalQuote.textContent='Customize / Request Quote for MB1-'+p.design;
- modal.classList.add('open');
+function quoteUrl(design) {
+  return FORM_BASE + encodeURIComponent('MB1-' + design);
 }
-function closeModal(){modal.classList.remove('open')}
-document.getElementById('closeModal').onclick=closeModal;
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-search.addEventListener('input',render);category.addEventListener('change',render);
 
-fetch('catalog-data.json').then(r=>r.json()).then(data=>{
- PRODUCTS=data;
- [...new Set(PRODUCTS.map(p=>p.category))].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;category.appendChild(o)});
- render();
-}).catch(()=>{empty.textContent='Catalog data could not be loaded.';empty.style.display='block'});
+function render() {
+  const q = (search.value || '').trim().toLowerCase();
+  const c = category.value || '';
 
+  const filtered = PRODUCTS.filter(p => {
+    const hay = (p.design + ' ' + p.sku + ' ' + p.name + ' ' + p.category).toLowerCase();
+    return (!q || hay.includes(q)) && (!c || p.category === c);
+  });
+
+  count.textContent = filtered.length.toLocaleString() + ' designs shown';
+  empty.style.display = filtered.length ? 'none' : 'block';
+
+  grid.innerHTML = filtered.map(p => `
+    <article class="card">
+      <div class="art">
+        <img loading="lazy" src="${esc(p.thumb)}" alt="${esc(p.alt)}">
+      </div>
+
+      <div class="info">
+        <div class="cat">${esc(p.category)}</div>
+        <div class="name">${esc(p.name)}</div>
+
+        <div class="meta">
+          ${esc(p.sku)}<br>
+          <span class="price">Starting at $${esc(p.price)}</span> · ${esc(p.sizes)}
+        </div>
+
+        <button class="view-button" onclick="openProduct('${esc(p.design)}')">
+          View Design
+        </button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function openProduct(id) {
+  const p = PRODUCTS.find(x => x.design === id);
+  if (!p) return;
+
+  modalImg.src = p.image;
+  modalImg.alt = p.alt;
+  modalName.textContent = p.name;
+  modalCat.textContent = p.category;
+
+  modalMeta.innerHTML = `
+    <span class="pill">${esc(p.sku)}</span>
+    <span class="pill">Design ${esc(p.design)}</span>
+    <span class="pill">${esc(p.sizes)}</span>
+    <span class="pill">Starting at $${esc(p.price)}</span>
+  `;
+
+  modalDesc.textContent = p.description;
+  modalQuote.href = quoteUrl(p.design);
+  modalQuote.textContent = 'Customize / Request Quote for MB1-' + p.design;
+
+  modal.classList.add('open');
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+}
+
+document.getElementById('closeModal').onclick = closeModal;
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) closeModal();
+});
+
+search.addEventListener('input', render);
+category.addEventListener('change', render);
+
+fetch('catalog-data.json')
+  .then(r => r.json())
+  .then(data => {
+    PRODUCTS = data;
+
+    [...new Set(PRODUCTS.map(p => p.category))]
+      .sort()
+      .forEach(c => {
+        const o = document.createElement('option');
+        o.value = c;
+        o.textContent = c;
+        category.appendChild(o);
+      });
+
+    render();
+  })
+  .catch(() => {
+    empty.textContent = 'Catalog data could not be loaded.';
+    empty.style.display = 'block';
+  });
 </script>
 </body>
 </html>
