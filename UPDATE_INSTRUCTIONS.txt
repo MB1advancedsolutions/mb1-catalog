@@ -1,0 +1,18 @@
+MB1 CATALOG UPDATE — GOOGLE FORM CONNECTED
+
+Replace only these 4 files in your existing local mb1-catalog folder:
+- index.html
+- catalog.css
+- catalog.js
+- catalog-data.json
+
+Then in GitHub Desktop:
+1. Open your mb1-catalog repository.
+2. You should see the changed files under Changes.
+3. In Summary, type: Add customization form
+4. Click Commit to main.
+5. Click Push origin.
+6. Wait for GitHub Pages to update.
+7. Open the live catalog and test any Customize button.
+
+The correct MB1 design number will be pre-filled automatically in your Google Form.
