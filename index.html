@@ -67,13 +67,13 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 
       <div class="size-box">
         <label for="modalSize">Choose Sign Size</label>
-        <select id="modalSize"><option value="8"" data-price="49">8" — $49</option>
-<option value="12"" data-price="69">12" — $69</option>
-<option value="18"" data-price="109">18" — $109</option>
-<option value="24"" data-price="149">24" — $149</option>
-<option value="30"" data-price="195">30" — $195</option>
-<option value="36"" data-price="265">36" — $265</option>
-<option value="48"" data-price="349">48" — $349</option></select>
+        <select id="modalSize"><option value="8" data-price="49">8&quot; — $49</option>
+<option value="12" data-price="69">12&quot; — $69</option>
+<option value="18" data-price="109">18&quot; — $109</option>
+<option value="24" data-price="149">24&quot; — $149</option>
+<option value="30" data-price="195">30&quot; — $195</option>
+<option value="36" data-price="265">36&quot; — $265</option>
+<option value="48" data-price="349">48&quot; — $349</option></select>
         <div id="modalPrice" class="live-price">$49</div>
         <div class="price-note">Price changes automatically with selected size.</div>
       </div>
@@ -86,7 +86,7 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 <script>
 let PRODUCTS=[];
 const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const PRICE_MAP={"8\"": 49, "12\"": 69, "18\"": 109, "24\"": 149, "30\"": 195, "36\"": 265, "48\"": 349};
+const PRICE_MAP={"8": 49, "12": 69, "18": 109, "24": 149, "30": 195, "36": 265, "48": 349};
 const grid=document.getElementById('grid'), search=document.getElementById('search'),
 category=document.getElementById('category'), categoryButtons=document.getElementById('categoryButtons'),
 count=document.getElementById('count');
@@ -133,7 +133,7 @@ function render(){
 function updateLivePrice(){
   const price=PRICE_MAP[modalSize.value];
   modalPrice.textContent='$'+price;
-  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+' · $'+price;
+  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+'\" · $'+price;
 }
 
 function openProduct(id){
@@ -142,7 +142,7 @@ function openProduct(id){
   modalImg.src=p.image; modalImg.alt=p.alt; modalName.textContent=p.name; modalCat.textContent=p.category;
   modalMeta.innerHTML=`<span class="pill">${esc(p.sku)}</span><span class="pill">Design ${esc(p.design)}</span>`;
   modalDesc.textContent=p.description;
-  modalSize.value='12"';
+  modalSize.value='12';
   modalQuote.href=quoteUrl(p.design);
   updateLivePrice();
   modal.classList.add('open');

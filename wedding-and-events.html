@@ -149,13 +149,13 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
       <div id="modalMeta" class="pills"></div><p id="modalDesc"></p>
       <div class="size-box">
         <label for="modalSize">Choose Sign Size</label>
-        <select id="modalSize"><option value="8"" data-price="49">8" — $49</option>
-<option value="12"" data-price="69">12" — $69</option>
-<option value="18"" data-price="109">18" — $109</option>
-<option value="24"" data-price="149">24" — $149</option>
-<option value="30"" data-price="195">30" — $195</option>
-<option value="36"" data-price="265">36" — $265</option>
-<option value="48"" data-price="349">48" — $349</option></select>
+        <select id="modalSize"><option value="8" data-price="49">8&quot; — $49</option>
+<option value="12" data-price="69">12&quot; — $69</option>
+<option value="18" data-price="109">18&quot; — $109</option>
+<option value="24" data-price="149">24&quot; — $149</option>
+<option value="30" data-price="195">30&quot; — $195</option>
+<option value="36" data-price="265">36&quot; — $265</option>
+<option value="48" data-price="349">48&quot; — $349</option></select>
         <div id="modalPrice" class="live-price">$49</div>
         <div class="price-note">Price changes automatically with selected size.</div>
       </div>
@@ -166,7 +166,7 @@ input,select{width:100%;padding:13px;border:1px solid #aab3ba;border-radius:10px
 
 <script>
 const FORM_BASE='https://docs.google.com/forms/d/e/1FAIpQLSeKH2ZTbvdDYOL3uxVm0OI38iVhjhxnN9cTzNdfo5TiWOW8TQ/viewform?usp=pp_url&entry.1065662702=';
-const PRICE_MAP={"8\"": 49, "12\"": 69, "18\"": 109, "24\"": 149, "30\"": 195, "36\"": 265, "48\"": 349};
+const PRICE_MAP={"8": 49, "12": 69, "18": 109, "24": 149, "30": 195, "36": 265, "48": 349};
 const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg'),
 modalName=document.getElementById('modalName'), modalCat=document.getElementById('modalCat'),
 modalMeta=document.getElementById('modalMeta'), modalDesc=document.getElementById('modalDesc'),
@@ -177,7 +177,7 @@ let currentDesign='';
 function updateLivePrice(){
   const price=PRICE_MAP[modalSize.value];
   modalPrice.textContent='$'+price;
-  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+' · $'+price;
+  modalQuote.textContent='Customize / Request Quote — '+modalSize.value+'\" · $'+price;
 }
 
 document.querySelectorAll('.view-button').forEach(btn=>{
@@ -186,7 +186,7 @@ document.querySelectorAll('.view-button').forEach(btn=>{
     modalImg.src=d.image; modalImg.alt=d.alt; modalName.textContent=d.name; modalCat.textContent=d.category;
     modalMeta.innerHTML=`<span class="pill">${d.sku}</span><span class="pill">Design ${d.design}</span>`;
     modalDesc.textContent=d.desc;
-    modalSize.value='12"';
+    modalSize.value='12';
     modalQuote.href=FORM_BASE+encodeURIComponent('MB1-'+d.design);
     updateLivePrice();
     modal.classList.add('open');
