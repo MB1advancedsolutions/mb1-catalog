@@ -1,49 +1,50 @@
-MB1 OVERSIZED SHIPPING FORM V7
+MB1 OVERSIZED LINK FIX V8
 
-This connects the 36" and 48" sign sizes to your new
-MB1 Oversized Shipping Quote Request Google Form.
+THIS FIX SEPARATES THE TWO LINKS:
 
-AUTOMATICALLY PREFILLED:
+1. SHIPPING POLICY
+   -> opens shipping-policy.html
+
+2. REQUEST OVERSIZED SHIPPING QUOTE
+   -> opens the Google oversized shipping form
+
+For 36" and 48", the quote button automatically pre-fills:
 - Design Number
 - Sign Size
 - Color
 
-STANDARD SIZES:
-8", 12", 18", 24", 30" continue to use Stripe Pay Now.
-
-OVERSIZED SIZES:
-36" and 48" change the button to:
-REQUEST OVERSIZED SHIPPING QUOTE
-
-FILES TO REPLACE:
+FILES TO REPLACE
 - index.html
 - all 12 original category .html files
 - shipping-policy.html
 
-DO NOT REPLACE:
+DO NOT REPLACE
 - customizable.html
 - catalog-data.json
 
-GITHUB:
+GITHUB
 1. Copy the HTML files from this ZIP into your local mb1-catalog folder.
-2. Replace existing files.
+2. Choose Replace All.
 3. Open GitHub Desktop.
 4. Uncheck .DS_Store if it appears.
-5. Summary: Connect oversized shipping form
+5. Summary: Fix oversized quote link
 6. Commit to main.
 7. Push origin.
 
-TEST:
-https://mb1advancedsolutions.github.io/mb1-catalog/?v=7
+TEST
+Open:
+https://mb1advancedsolutions.github.io/mb1-catalog/?v=8
 
-Pick a design.
-Choose 36".
-Choose a color.
-Click Request Oversized Shipping Quote.
+A. Click Shipping Policy
+   It should open:
+   shipping-policy.html
 
-Confirm the Google Form opens with the correct:
+B. Pick any design
+   Choose 36" or 48"
+   Click Request Oversized Shipping Quote
+   It should open your Google form, NOT the shipping policy page.
+
+The Google form should already contain:
 - MB1 design number
-- 36"
-- color
-
-Repeat for 48".
+- selected size
+- selected color
