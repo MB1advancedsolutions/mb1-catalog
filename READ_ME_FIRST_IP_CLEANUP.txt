@@ -36,3 +36,10 @@ See IP_AUDIT_REMOVED_ITEMS.csv for the complete list of 148 removed designs.
 
 CLOUDINARY
 This package removes the items from the public catalog. It does not delete the source images from Cloudinary.
+
+
+V14 CACHE-BUST FIX:
+- index.html now loads catalog-data-v14.json?v=14 instead of catalog-data.json.
+- This forces browsers/GitHub Pages to request the cleaned 1,397-item dataset rather than an older cached copy.
+- After upload, test with https://mb1advancedsolutions.github.io/mb1-catalog/index.html?v=14
+- Clean counts: 1,397 total designs; Memorial & Tribute 13; Sports & Hobbies 146; Garage & Workshop 73; Home Decor & Inspirational 414; Seasonal & Holiday 164; Customizable 490.

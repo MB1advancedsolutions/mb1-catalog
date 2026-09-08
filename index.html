@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- MB1 IP SAFE CATALOG V14 -->
 <!-- MB1 BROWSER REFERENCE FALLBACK V12 -->
 <!-- MB1 ORDER REFERENCE V11 -->
 <!-- MB1 CUSTOM PREFILL V9 -->
@@ -62,7 +63,7 @@ function openProductData(d){currentDesign=d.design;modalImg.src=d.image;modalImg
 });modalColor.addEventListener('change',()=>{
   updateCheckout();
   if(customArea.style.display!=='none')updateCustomizeLink();
-});document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});search.addEventListener('input',render);category.addEventListener('change',render);fetch('catalog-data.json').then(r=>r.json()).then(data=>{PRODUCTS=data;buildCategoryButtons();render()});
+});document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});search.addEventListener('input',render);category.addEventListener('change',render);fetch('catalog-data-v14.json?v=14').then(r=>r.json()).then(data=>{PRODUCTS=data;buildCategoryButtons();render()});
 buyNow.addEventListener('click',()=>{
   const ref=buyNow.dataset.orderRef||'';
   if(ref && buyNow.href.includes('buy.stripe.com')){
