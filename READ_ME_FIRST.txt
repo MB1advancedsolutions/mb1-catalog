@@ -1,50 +1,67 @@
-MB1 OVERSIZED LINK FIX V8
+MB1 CUSTOMIZATION PREFILL V9
 
-THIS FIX SEPARATES THE TWO LINKS:
+THIS UPDATE IMPROVES THE CUSTOMIZATION FLOW.
 
-1. SHIPPING POLICY
-   -> opens shipping-policy.html
+CUSTOMER SELECTS:
+- Size
+- Color / Finish
 
-2. REQUEST OVERSIZED SHIPPING QUOTE
-   -> opens the Google oversized shipping form
+THEN CLICKS:
+Customize This Design
+or
+Customize / Request Quote
 
-For 36" and 48", the quote button automatically pre-fills:
+THE GOOGLE CUSTOMIZATION FORM OPENS WITH THESE ALREADY FILLED:
 - Design Number
-- Sign Size
-- Color
+- Size
+- Color / Finish
+
+GOOGLE FORM FIELDS
+Design Number: entry.1065662702
+Size: entry.1789039289
+Color / Finish: entry.1061966535
+
+THIS WORKS FROM:
+1. The Customizable category
+2. A customizable product inside its original category
 
 FILES TO REPLACE
 - index.html
 - all 12 original category .html files
-- shipping-policy.html
+- customizable.html
 
 DO NOT REPLACE
-- customizable.html
+- shipping-policy.html
 - catalog-data.json
 
-GITHUB
+GITHUB DESKTOP
 1. Copy the HTML files from this ZIP into your local mb1-catalog folder.
 2. Choose Replace All.
 3. Open GitHub Desktop.
 4. Uncheck .DS_Store if it appears.
-5. Summary: Fix oversized quote link
+5. Summary: Prefill customization size and color
 6. Commit to main.
 7. Push origin.
 
 TEST
 Open:
-https://mb1advancedsolutions.github.io/mb1-catalog/?v=8
+https://mb1advancedsolutions.github.io/mb1-catalog/?v=9
 
-A. Click Shipping Policy
-   It should open:
-   shipping-policy.html
+TEST FROM AN ORIGINAL CATEGORY:
+- Open a customizable design
+- Choose 24"
+- Choose Black
+- Click Customize This Design
+- Confirm Google Form has:
+  correct design
+  24"
+  Black
 
-B. Pick any design
-   Choose 36" or 48"
-   Click Request Oversized Shipping Quote
-   It should open your Google form, NOT the shipping policy page.
+TEST CUSTOMIZABLE CATEGORY:
+https://mb1advancedsolutions.github.io/mb1-catalog/customizable.html?v=9
 
-The Google form should already contain:
-- MB1 design number
-- selected size
-- selected color
+- Choose a design
+- Choose 24"
+- Choose Black
+- Click Customize / Request Quote
+- Confirm all three values are prefilled.
