@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- MB1 BROWSER REFERENCE FALLBACK V12 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -180,14 +181,36 @@ h1{margin:0 0 12px;font-size:34px}
 <script>
 (function(){
   const params = new URLSearchParams(window.location.search);
-  const ref = params.get('utm_content');
+
+  function cleanRef(value){
+    if(!value)return '';
+    return value.replace(/[^A-Za-z0-9_-]/g,'');
+  }
+
+  function storedRef(){
+    const key='mb1_pending_order_reference';
+    for(const store of [sessionStorage,localStorage]){
+      try{
+        const raw=store.getItem(key);
+        if(!raw)continue;
+        const parsed=JSON.parse(raw);
+        if(parsed && parsed.ref && parsed.ts){
+          const age=Date.now()-Number(parsed.ts);
+          if(age >= 0 && age < 24*60*60*1000){
+            return cleanRef(parsed.ref);
+          }
+        }
+      }catch(e){}
+    }
+    return '';
+  }
+
+  const queryRef = cleanRef(params.get('utm_content'));
+  const ref = queryRef || storedRef();
 
   if(!ref) return;
 
-  const safe = ref.replace(/[^A-Za-z0-9_-]/g,'');
-  if(!safe) return;
-
-  const parts = safe.split('_');
+  const parts = ref.split('_');
   let details = '';
 
   if(parts.length >= 4 && parts[0] === 'MB1'){
@@ -200,7 +223,7 @@ h1{margin:0 0 12px;font-size:34px}
     details = 'Design ' + design + ' · Size ' + size + ' · Color ' + color;
   }
 
-  document.getElementById('referenceCode').textContent = safe;
+  document.getElementById('referenceCode').textContent = ref;
   document.getElementById('referenceDetails').textContent = details;
   document.getElementById('referenceBox').style.display = 'block';
 })();

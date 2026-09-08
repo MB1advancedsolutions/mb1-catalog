@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MB1 Stripe Sandbox Test</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#eef1f3;color:#1f2833;margin:0}
+main{max-width:720px;margin:50px auto;padding:20px}
+.card{background:#fff;border:1px solid #d8dde0;border-radius:18px;padding:28px}
+h1{margin-top:0}
+label{display:block;font-weight:700;margin:18px 0 7px}
+input{width:100%;padding:12px;border:1px solid #bcc5cb;border-radius:8px;font-size:15px}
+button{margin-top:22px;background:#18212a;color:#fff;border:0;border-radius:9px;padding:13px 18px;font-weight:700;cursor:pointer}
+.note{margin-top:18px;color:#68727b;line-height:1.55;font-size:14px}
+code{word-break:break-word}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+<h1>MB1 Stripe Sandbox Test</h1>
+<p>This page stores a test MB1 order reference before opening your Stripe sandbox Payment Link.</p>
+
+<label for="ref">Test Order Reference</label>
+<input id="ref" value="MB1_0004_24_BLACK">
+
+<label for="stripeUrl">Paste Your Stripe Sandbox Payment Link</label>
+<input id="stripeUrl" placeholder="https://buy.stripe.com/test_...">
+
+<button id="start">Start Sandbox Checkout</button>
+
+<div class="note">
+Your sandbox Payment Link must redirect after payment to:<br>
+<code>https://mb1advancedsolutions.github.io/mb1-catalog/order-confirmation.html</code>
+</div>
+</section>
+</main>
+
+<script>
+document.getElementById('start').addEventListener('click',()=>{
+  const ref=document.getElementById('ref').value.trim().replace(/[^A-Za-z0-9_-]/g,'');
+  const raw=document.getElementById('stripeUrl').value.trim();
+
+  if(!ref){alert('Enter an MB1 order reference.');return;}
+  if(!raw.startsWith('https://buy.stripe.com/')){alert('Paste your Stripe sandbox Payment Link.');return;}
+
+  const payload=JSON.stringify({ref:ref,ts:Date.now()});
+  try{sessionStorage.setItem('mb1_pending_order_reference',payload);}catch(e){}
+  try{localStorage.setItem('mb1_pending_order_reference',payload);}catch(e){}
+
+  let url;
+  try{url=new URL(raw);}catch(e){alert('The Stripe URL is not valid.');return;}
+  url.searchParams.set('client_reference_id',ref);
+  url.searchParams.set('utm_content',ref);
+
+  window.location.href=url.toString();
+});
+</script>
+</body>
+</html>
