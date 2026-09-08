@@ -1,67 +1,80 @@
-MB1 CUSTOMIZATION PREFILL V9
+MB1 ORDER REFERENCE + CONFIRMATION V11
 
-THIS UPDATE IMPROVES THE CUSTOMIZATION FLOW.
+WHAT THIS UPDATE DOES
 
-CUSTOMER SELECTS:
-- Size
-- Color / Finish
+STANDARD STRIPE CHECKOUT NOW SENDS BOTH:
+1. client_reference_id
+   Example: MB1_0004_24_BLACK
+   Stripe keeps this on the Checkout Session for reconciliation/webhooks.
 
-THEN CLICKS:
-Customize This Design
-or
-Customize / Request Quote
+2. utm_content
+   Example: MB1_0004_24_BLACK
+   Stripe automatically carries this onto the redirect URL after successful payment.
 
-THE GOOGLE CUSTOMIZATION FORM OPENS WITH THESE ALREADY FILLED:
-- Design Number
-- Size
-- Color / Finish
+THE MB1 CONFIRMATION PAGE READS utm_content AND DISPLAYS:
 
-GOOGLE FORM FIELDS
-Design Number: entry.1065662702
-Size: entry.1789039289
-Color / Finish: entry.1061966535
+MB1 Order Reference
+MB1_0004_24_BLACK
 
-THIS WORKS FROM:
-1. The Customizable category
-2. A customizable product inside its original category
+Design MB1-0004 · Size 24" · Color Black
+
 
 FILES TO REPLACE
 - index.html
-- all 12 original category .html files
-- customizable.html
+- all 12 original category HTML pages
+- order-confirmation.html
 
 DO NOT REPLACE
+- customizable.html
 - shipping-policy.html
 - catalog-data.json
 
+
 GITHUB DESKTOP
 1. Copy the HTML files from this ZIP into your local mb1-catalog folder.
-2. Choose Replace All.
-3. Open GitHub Desktop.
-4. Uncheck .DS_Store if it appears.
-5. Summary: Prefill customization size and color
-6. Commit to main.
-7. Push origin.
+2. Replace the existing standard category pages and index.html.
+3. Replace order-confirmation.html.
+4. Open GitHub Desktop.
+5. Uncheck .DS_Store if it appears.
+6. Summary:
+   Show MB1 order reference after payment
+7. Commit to main.
+8. Push origin.
 
-TEST
-Open:
-https://mb1advancedsolutions.github.io/mb1-catalog/?v=9
 
-TEST FROM AN ORIGINAL CATEGORY:
-- Open a customizable design
-- Choose 24"
-- Choose Black
-- Click Customize This Design
-- Confirm Google Form has:
-  correct design
-  24"
-  Black
+STRIPE REDIRECT
 
-TEST CUSTOMIZABLE CATEGORY:
-https://mb1advancedsolutions.github.io/mb1-catalog/customizable.html?v=9
+For EACH standard Payment Link, the After payment redirect should remain:
 
-- Choose a design
-- Choose 24"
-- Choose Black
-- Click Customize / Request Quote
-- Confirm all three values are prefilled.
+https://mb1advancedsolutions.github.io/mb1-catalog/order-confirmation.html
+
+Do NOT manually add utm_content to that redirect URL.
+
+The catalog adds utm_content to the Payment Link.
+Stripe then carries it onto the redirect automatically after payment.
+
+
+TEST WITHOUT PAYING
+
+After GitHub is updated, you can directly test the confirmation page with:
+
+https://mb1advancedsolutions.github.io/mb1-catalog/order-confirmation.html?utm_content=MB1_0004_24_BLACK
+
+You should see:
+
+MB1 Order Reference
+MB1_0004_24_BLACK
+
+Design MB1-0004 · Size 24" · Color Black
+
+
+REAL CHECKOUT FLOW
+
+Catalog
+→ customer chooses design / size / color
+→ Stripe Payment Link contains:
+  client_reference_id=MB1_0004_24_BLACK
+  utm_content=MB1_0004_24_BLACK
+→ successful payment
+→ Stripe redirects to order-confirmation.html
+→ confirmation page visibly shows the MB1 order reference.

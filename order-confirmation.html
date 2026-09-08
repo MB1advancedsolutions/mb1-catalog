@@ -61,6 +61,33 @@ h1{margin:0 0 12px;font-size:34px}
   color:var(--muted);
   line-height:1.6;
 }
+.reference{
+  display:none;
+  margin:24px auto 0;
+  max-width:620px;
+  background:#f3f7f4;
+  border:1px solid #cbd8ce;
+  border-radius:14px;
+  padding:18px;
+}
+.reference .label{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.reference .code{
+  margin-top:6px;
+  font-size:21px;
+  font-weight:700;
+  word-break:break-word;
+}
+.reference .details{
+  margin-top:8px;
+  color:var(--muted);
+  line-height:1.5;
+}
 .steps{
   margin:28px auto 0;
   max-width:620px;
@@ -123,6 +150,12 @@ h1{margin:0 0 12px;font-size:34px}
       Please keep your Stripe payment receipt for your records.
     </p>
 
+    <div id="referenceBox" class="reference">
+      <div class="label">MB1 Order Reference</div>
+      <div id="referenceCode" class="code"></div>
+      <div id="referenceDetails" class="details"></div>
+    </div>
+
     <div class="steps">
       <h2>What happens next</h2>
       <ul>
@@ -139,9 +172,38 @@ h1{margin:0 0 12px;font-size:34px}
     </div>
 
     <div class="help">
-      If you believe you entered something incorrectly, reply to your payment receipt or contact MB1 Advanced Solutions and include your design number or Stripe payment information.
+      If you contact MB1 about your order, include the MB1 order reference shown above and your Stripe payment receipt.
     </div>
   </section>
 </main>
+
+<script>
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get('utm_content');
+
+  if(!ref) return;
+
+  const safe = ref.replace(/[^A-Za-z0-9_-]/g,'');
+  if(!safe) return;
+
+  const parts = safe.split('_');
+  let details = '';
+
+  if(parts.length >= 4 && parts[0] === 'MB1'){
+    const design = 'MB1-' + parts[1];
+    const size = parts[2] + '"';
+    const color = parts.slice(3).join(' ')
+      .toLowerCase()
+      .replace(/\b\w/g, c => c.toUpperCase());
+
+    details = 'Design ' + design + ' · Size ' + size + ' · Color ' + color;
+  }
+
+  document.getElementById('referenceCode').textContent = safe;
+  document.getElementById('referenceDetails').textContent = details;
+  document.getElementById('referenceBox').style.display = 'block';
+})();
+</script>
 </body>
 </html>
