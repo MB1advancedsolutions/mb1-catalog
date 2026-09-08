@@ -1,36 +1,49 @@
-MB1 SHIPPING POLICY + STRIPE CHECKOUT V6
+MB1 OVERSIZED SHIPPING FORM V7
 
-WHAT CHANGED
-- 8": $12.95 standard shipping
-- 12": $16.95 standard shipping
-- 18", 24", 30": FREE standard shipping
-- 36" and 48": oversized shipping quote required before payment
-- Added shipping-policy.html
-- Existing customization flow remains in place
+This connects the 36" and 48" sign sizes to your new
+MB1 Oversized Shipping Quote Request Google Form.
 
-FILES TO REPLACE / ADD
-Replace:
+AUTOMATICALLY PREFILLED:
+- Design Number
+- Sign Size
+- Color
+
+STANDARD SIZES:
+8", 12", 18", 24", 30" continue to use Stripe Pay Now.
+
+OVERSIZED SIZES:
+36" and 48" change the button to:
+REQUEST OVERSIZED SHIPPING QUOTE
+
+FILES TO REPLACE:
 - index.html
-- customizable.html
-- all 12 category .html files
-
-Add:
+- all 12 original category .html files
 - shipping-policy.html
 
-DO NOT replace catalog-data.json.
+DO NOT REPLACE:
+- customizable.html
+- catalog-data.json
 
-GITHUB DESKTOP
-1. Copy the HTML files into your local mb1-catalog folder.
-2. Choose Replace All for existing HTML files.
-3. shipping-policy.html will be a new file.
-4. Open GitHub Desktop.
-5. Leave the HTML files checked.
-6. Uncheck .DS_Store if it appears.
-7. Summary: Add MB1 shipping policy
-8. Commit to main.
-9. Push origin.
-10. Test: https://mb1advancedsolutions.github.io/mb1-catalog/?v=6
+GITHUB:
+1. Copy the HTML files from this ZIP into your local mb1-catalog folder.
+2. Replace existing files.
+3. Open GitHub Desktop.
+4. Uncheck .DS_Store if it appears.
+5. Summary: Connect oversized shipping form
+6. Commit to main.
+7. Push origin.
 
-STRIPE
-Use STRIPE_SHIPPING_SETUP.txt to configure the five public checkout links.
-The 36" and 48" Stripe links are intentionally not used by the public catalog until shipping is quoted.
+TEST:
+https://mb1advancedsolutions.github.io/mb1-catalog/?v=7
+
+Pick a design.
+Choose 36".
+Choose a color.
+Click Request Oversized Shipping Quote.
+
+Confirm the Google Form opens with the correct:
+- MB1 design number
+- 36"
+- color
+
+Repeat for 48".
