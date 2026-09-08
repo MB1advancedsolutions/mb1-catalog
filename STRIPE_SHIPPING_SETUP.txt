@@ -1,0 +1,38 @@
+MB1 STRIPE SHIPPING SETUP — V6
+
+EDIT THESE PAYMENT LINKS IN STRIPE:
+
+8" / $49 LINK
+- Collect billing + shipping address
+- United States allowed
+- Shipping rate: Standard Shipping — $12.95
+
+12" / $69 LINK
+- Collect billing + shipping address
+- United States allowed
+- Shipping rate: Standard Shipping — $16.95
+
+18" / $109 LINK
+- Collect billing + shipping address
+- Shipping rate: FREE Standard Shipping — $0.00
+
+24" / $149 LINK
+- Collect billing + shipping address
+- Shipping rate: FREE Standard Shipping — $0.00
+
+30" / $195 LINK
+- Collect billing + shipping address
+- Shipping rate: FREE Standard Shipping — $0.00
+
+36" / $265 LINK
+- Do not expose this as a normal public checkout yet.
+- The V6 catalog does not send customers to this link.
+- Quote oversized shipping first, then collect payment after the destination cost is known.
+
+48" / $349 LINK
+- Do not expose this as a normal public checkout yet.
+- The V6 catalog does not send customers to this link.
+- Quote oversized/freight shipping first, then collect payment after the destination cost is known.
+
+POLICY WORDING
+FREE standard shipping on qualifying orders over $100 within the contiguous United States. Oversized items may require an additional shipping charge.
