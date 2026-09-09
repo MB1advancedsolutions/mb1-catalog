@@ -1,0 +1,39 @@
+{
+  "product_count": 1397,
+  "customizable_count": 490,
+  "multi_category_products": 548,
+  "membership_counts": {
+    "memorial and tribute": 13,
+    "lake house and nautical": 92,
+    "beach and coastal": 30,
+    "family & name": 416,
+    "home decor and inspirational": 813,
+    "sports and hobbies": 151,
+    "wildlife and outdoors": 167,
+    "garage and workshop": 117,
+    "seasonal and holiday": 164,
+    "wedding and events": 7,
+    "address and property": 18,
+    "farm and western": 35
+  },
+  "primary_counts": {
+    "memorial and tribute": 13,
+    "lake house and nautical": 74,
+    "sports and hobbies": 146,
+    "wildlife and outdoors": 140,
+    "garage and workshop": 73,
+    "seasonal and holiday": 164,
+    "home decor and inspirational": 414,
+    "family & name": 302,
+    "wedding and events": 7,
+    "address and property": 17,
+    "farm and western": 31,
+    "beach and coastal": 16
+  },
+  "category_length_counts": {
+    "1": 849,
+    "4": 6,
+    "3": 66,
+    "2": 476
+  }
+}
