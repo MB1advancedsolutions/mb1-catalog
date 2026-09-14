@@ -23,8 +23,8 @@ function buildCategoryButtons(){
   const counts={};
   source.forEach(p=>productCategories(p).forEach(c=>counts[c]=(counts[c]||0)+1));
   const cats=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]||categoryLabel(a).localeCompare(categoryLabel(b)));
-  categoryButtons.innerHTML=`<button class="category-btn active" data-cat="">${e(ALL_LABEL)} (${source.length})</button>`+cats.map(c=>`<button class="category-btn" data-cat="${e(c)}">${e(categoryLabel(c))} (${counts[c]})</button>`).join('');
-  categoryButtons.querySelectorAll('.category-btn').forEach(btn=>btn.addEventListener('click',()=>{category.value=btn.dataset.cat;render()}));
+  categoryButtons.innerHTML=`<button class="category-btn active" data-cat="">${e(ALL_LABEL)} (${source.length})</button>`+cats.map(c=>`<button class="category-btn" data-cat="${e(c)}">${e(categoryLabel(c))} (${counts[c]})</button>`).join('')+`<a class="category-btn" href="religious.html">Religious (54)</a>`;
+  categoryButtons.querySelectorAll('.category-btn').forEach(btn=>btn.addEventListener('click',()=>{if(btn.tagName==='A')return;category.value=btn.dataset.cat;render()}));
   category.innerHTML='<option value="">All categories</option>';
   [...cats].sort((a,b)=>categoryLabel(a).localeCompare(categoryLabel(b))).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=categoryLabel(c);category.appendChild(o)});
   const customLink=document.querySelector('.customizable-link');
