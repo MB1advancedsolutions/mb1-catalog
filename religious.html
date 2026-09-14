@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Religious Metal Signs | MB1 Advanced Solutions</title>
+<meta name="description" content="Shop 54 religious and faith-inspired metal sign designs from MB1 Advanced Solutions, including crosses, Jesus, faith, angels, prayer and Christian-themed décor.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f3f2;color:#1f2833}a{color:inherit}.wrap{max-width:1400px;margin:0 auto;padding:28px}.hero{background:#1f2833;color:#fff;border-radius:20px;padding:28px;margin-bottom:22px}.brand{font-weight:700;font-size:14px;letter-spacing:.08em;opacity:.82}h1{margin:10px 0 8px;font-size:38px}.hero p{margin:0;color:#d3d8dc;line-height:1.55}.top{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.top a,.buy{display:inline-block;text-decoration:none;background:#fff;color:#1f2833;border-radius:999px;padding:10px 15px;font-weight:700;font-size:12px}.summary{margin:0 0 14px;color:#68727b;font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}.card{background:#fff;border:1px solid #d9dee2;border-radius:16px;overflow:hidden}.image{aspect-ratio:1/1;background:#f7f7f5;padding:14px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #d9dee2}.image img{width:100%;height:100%;object-fit:contain}.info{padding:14px 15px 16px}.cat{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#69737c;margin-bottom:7px}.name{display:block;text-decoration:none;font-weight:700;font-size:17px;line-height:1.2;min-height:42px}.meta{font-size:12px;color:#69737c;line-height:1.55;margin:9px 0 12px}.price{font-weight:700;color:#1f2833}.buy{background:#1f2833;color:white;padding:8px 12px}.empty{background:#fff;border:1px solid #d9dee2;border-radius:14px;padding:22px;color:#68727b}@media(max-width:700px){.wrap{padding:14px}.hero{padding:20px}h1{font-size:28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.info{padding:10px}.name{font-size:14px;min-height:35px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<div class="brand">MB1 ADVANCED SOLUTIONS</div>
+<h1>Religious</h1>
+<p>54 faith-inspired designs including crosses, Jesus and Christian themes, angels, prayer, scripture references and religious décor. Designs may also appear in their original categories.</p>
+<div class="top"><a href="index.html">Browse All Designs</a><a href="customizable.html">Customizable Designs</a></div>
+</section>
+<div id="summary" class="summary">Loading Religious designs…</div>
+<section id="grid" class="grid"></section>
+<div id="empty" class="empty" style="display:none">Religious designs could not be loaded. Please return to Browse All Designs.</div>
+</div>
+<script>
+const RELIGIOUS_IDS=new Set(['0852','0861','0870','0880','0924','0927','0980','0981','0982','0983','1050','1058','1067','1085','1086','1130','1132','1193','1262','1388','1389','1390','1391','1392','1393','1394','1395','1396','1397','1398','1399','1401','1402','1607','1669','1735','1744','1762','1800','1817','1852','1856','1867','1905','1941','1943','1952','2011','2820','2839','2840','2841','2962','2968']);
+const grid=document.getElementById('grid'),summary=document.getElementById('summary'),empty=document.getElementById('empty');
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function normalizeId(v){return String(v??'').replace(/\D/g,'').padStart(4,'0')}
+fetch('catalog-data.json').then(r=>{if(!r.ok)throw new Error('catalog');return r.json()}).then(data=>{
+ const products=data.filter(p=>RELIGIOUS_IDS.has(normalizeId(p.design))).sort((a,b)=>normalizeId(a.design).localeCompare(normalizeId(b.design)));
+ summary.textContent=products.length.toLocaleString()+' Religious designs';
+ if(!products.length){empty.style.display='block';return}
+ grid.innerHTML=products.map(p=>{const id=normalizeId(p.design);return `<article class="card"><a class="image" href="index.html?design=${id}"><img src="${esc(p.thumb||p.image)}" alt="${esc(p.alt||p.name+' religious metal sign design by MB1 Advanced Solutions')}" loading="lazy"></a><div class="info"><div class="cat">Religious</div><a class="name" href="index.html?design=${id}">${esc(p.name)}</a><div class="meta">${esc(p.sku||'MB1-'+id)}<br><span class="price">From $49</span> · 8&quot;–48&quot;</div><a class="buy" href="index.html?design=${id}">View &amp; Buy</a></div></article>`}).join('');
+}).catch(()=>{summary.textContent='';empty.style.display='block'});
+</script>
+</body>
+</html>
