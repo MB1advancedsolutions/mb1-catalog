@@ -1,0 +1,2679 @@
+{
+  "version": 20,
+  "generatedFrom": "MB1_Catalog_Monogram_Grouping_V1.csv",
+  "groupCount": 20,
+  "groups": [
+    {
+      "id": "MB1-MONO-001",
+      "name": "Classic Letter Monogram Signs",
+      "group": "Classic Monogram Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0671",
+      "variants": [
+        {
+          "design": "0671",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0672",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0673",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0674",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0675",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0676",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0677",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0678",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0679",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0680",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0681",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0682",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0683",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0684",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0685",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0686",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0687",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0688",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0689",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0690",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0691",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0692",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0693",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0694",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0695",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0696",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-002",
+      "name": "Classic Monogram Sign Styles",
+      "group": "Classic Monogram Style Collection",
+      "variantType": "Style",
+      "primaryDesign": "0503",
+      "variants": [
+        {
+          "design": "0503",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0512",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0513",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0514",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0515",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0516",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0517",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0518",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0519",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0504",
+          "label": "Style 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0505",
+          "label": "Style 11",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0506",
+          "label": "Style 12",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0507",
+          "label": "Style 13",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0508",
+          "label": "Style 14",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0509",
+          "label": "Style 15",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0510",
+          "label": "Style 16",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0511",
+          "label": "Style 17",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0521",
+          "label": "Style 18",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0522",
+          "label": "Style 19",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0523",
+          "label": "Style 20",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0524",
+          "label": "Style 21",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0525",
+          "label": "Style 22",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-003",
+      "name": "Split Monogram Sign Styles",
+      "group": "Split Monogram Style Collection",
+      "variantType": "Style",
+      "primaryDesign": "1429",
+      "variants": [
+        {
+          "design": "1429",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1440",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1450",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1451",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0335",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0336",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1454",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1455",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1456",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1430",
+          "label": "Style 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1431",
+          "label": "Style 11",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1432",
+          "label": "Style 12",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1433",
+          "label": "Style 13",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1434",
+          "label": "Style 14",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1435",
+          "label": "Style 15",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1436",
+          "label": "Style 16",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1437",
+          "label": "Style 17",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1438",
+          "label": "Style 18",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1439",
+          "label": "Style 19",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1441",
+          "label": "Style 20",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1442",
+          "label": "Style 21",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1443",
+          "label": "Style 22",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1444",
+          "label": "Style 23",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1445",
+          "label": "Style 24",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1446",
+          "label": "Style 25",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1447",
+          "label": "Style 26",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1448",
+          "label": "Style 27",
+          "sort": 27,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1449",
+          "label": "Style 28",
+          "sort": 28,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-004",
+      "name": "Split Letter Monogram Sign Styles",
+      "group": "Split Letter Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "0775",
+      "variants": [
+        {
+          "design": "0775",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0786",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0793",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0794",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0795",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0796",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0797",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0798",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0799",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0776",
+          "label": "Style 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0777",
+          "label": "Style 11",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0778",
+          "label": "Style 12",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0779",
+          "label": "Style 13",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0780",
+          "label": "Style 14",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0781",
+          "label": "Style 15",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0782",
+          "label": "Style 16",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0783",
+          "label": "Style 17",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0784",
+          "label": "Style 18",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0785",
+          "label": "Style 19",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0787",
+          "label": "Style 20",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0788",
+          "label": "Style 21",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0789",
+          "label": "Style 22",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0790",
+          "label": "Style 23",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0791",
+          "label": "Style 24",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0792",
+          "label": "Style 25",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-005",
+      "name": "Script Vine Split Monogram Signs",
+      "group": "Script Vine Split Monogram Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0645",
+      "variants": [
+        {
+          "design": "0645",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0646",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0647",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0648",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0649",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0650",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0651",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0652",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0653",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0654",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0655",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0656",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0657",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0658",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0659",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0660",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0661",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0662",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0663",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0664",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0665",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0666",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0667",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0668",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0669",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0670",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-006",
+      "name": "Alphabet Split Monogram Sign Styles",
+      "group": "Alphabet Split Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "0751",
+      "variants": [
+        {
+          "design": "0751",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0761",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0762",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0763",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0764",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0765",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0766",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0767",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0768",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0752",
+          "label": "Style 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0753",
+          "label": "Style 11",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0754",
+          "label": "Style 12",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0755",
+          "label": "Style 13",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0756",
+          "label": "Style 14",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0757",
+          "label": "Style 15",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0758",
+          "label": "Style 16",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0759",
+          "label": "Style 17",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0760",
+          "label": "Style 19",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-007",
+      "name": "Fleur Monogram Signs",
+      "group": "Fleur Monogram Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0619",
+      "variants": [
+        {
+          "design": "0619",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0620",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0621",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0622",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0623",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0624",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0625",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0626",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0627",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0628",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0629",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0630",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0631",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0632",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0633",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0634",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0635",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0636",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0637",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0638",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0639",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0640",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0641",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0642",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0643",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0644",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-008",
+      "name": "Sunflower Monogram Signs",
+      "group": "Sunflower Monogram Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "1493",
+      "variants": [
+        {
+          "design": "1493",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1494",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1495",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1496",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1497",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1498",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1499",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1500",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1501",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1502",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1503",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1504",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1505",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1506",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1507",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1508",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1509",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1510",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1511",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1512",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1513",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1514",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1515",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1516",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1517",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1518",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-009",
+      "name": "Floral Welcome Monogram Signs",
+      "group": "Floral Welcome Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "2246",
+      "variants": [
+        {
+          "design": "2246",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "2245",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2244",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2240",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2239",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2242",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2243",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2255",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2254",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2248",
+          "label": "Style 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2247",
+          "label": "Style 11",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2249",
+          "label": "Style 12",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2250",
+          "label": "Style 13",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2253",
+          "label": "Style 14",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2256",
+          "label": "Style 15",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2252",
+          "label": "Style 16",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2251",
+          "label": "Style 17",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2238",
+          "label": "Style 18",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2241",
+          "label": "Style 19",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-010",
+      "name": "Compass Monogram Signs",
+      "group": "Compass Monogram Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0194",
+      "variants": [
+        {
+          "design": "0194",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0195",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0196",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0197",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0198",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0199",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0200",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0201",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0202",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0203",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0204",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0205",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0206",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0207",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0208",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0209",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0210",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0211",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0212",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0213",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0214",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0215",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0216",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0217",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0218",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0219",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-011",
+      "name": "Lake House & Nautical Monogram Signs",
+      "group": "Lake House & Nautical Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "0031",
+      "variants": [
+        {
+          "design": "0031",
+          "label": "Anchor Monogram Frame",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1284",
+          "label": "Jeep Compass Monogram",
+          "sort": 2,
+          "primary": false,
+          "visible": false
+        },
+        {
+          "design": "1686",
+          "label": "Lake House Monogram",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1687",
+          "label": "Lake House Sign Monogram",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1688",
+          "label": "Lake House Simple Monogram",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1689",
+          "label": "Welcome Lake House Monogram",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-012",
+      "name": "Beach & Coastal Monogram Signs",
+      "group": "Beach & Coastal Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "1466",
+      "variants": [
+        {
+          "design": "1466",
+          "label": "Beach Life Monogram",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1469",
+          "label": "Beach Sunset Monogram",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1470",
+          "label": "Flamingo Beach Scene Monogram",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1475",
+          "label": "Palms Beach Monogram",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1476",
+          "label": "Surf Palm Tree Monogram",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2581",
+          "label": "Welcome Summer Monogram",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2583",
+          "label": "Welcome Sunset Monogram",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2586",
+          "label": "Welcome Sunset Monogram Blank",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2594",
+          "label": "Surfing Monogram",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2596",
+          "label": "Surfing Wave Monogram",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2597",
+          "label": "Flamingo Monogram",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2598",
+          "label": "Vintage Car Palm Trees Monogram",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2599",
+          "label": "Cocktail Palm Trees Monogram",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2600",
+          "label": "Dolphines Monogram",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2601",
+          "label": "Surfing Van Monogram",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2602",
+          "label": "Sunset Monogram",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2607",
+          "label": "Tiki Surfing Board Monogram",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-013",
+      "name": "Antler Monogram Signs",
+      "group": "Antler Monogram Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0567",
+      "variants": [
+        {
+          "design": "0567",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0568",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0569",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0570",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0571",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0572",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0573",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0574",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0575",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0576",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0577",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0578",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0579",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0580",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0581",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0582",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0583",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0584",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0585",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0586",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0587",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0588",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0589",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0590",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0591",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0592",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-014",
+      "name": "Deer & Elk Monogram Signs",
+      "group": "Deer & Elk Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "1665",
+      "variants": [
+        {
+          "design": "1665",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1666",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1667",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1668",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-015",
+      "name": "Cowboy & Western Monogram Signs",
+      "group": "Cowboy & Western Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "2070",
+      "variants": [
+        {
+          "design": "2070",
+          "label": "Cowboy Monogram 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "2072",
+          "label": "Cowboy Monogram 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2071",
+          "label": "Cowboy Monogram 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2068",
+          "label": "Cowboy Monogram 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2067",
+          "label": "Cowboy Monogram 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2065",
+          "label": "Cowboy Monogram 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2066",
+          "label": "Cowboy Monogram 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2074",
+          "label": "Cowboy Monogram 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2073",
+          "label": "Cowboy Monogram 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1247",
+          "label": "Windmill Monogram",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-016",
+      "name": "Dog Welcome Monogram Signs",
+      "group": "Dog Welcome Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "2116",
+      "variants": [
+        {
+          "design": "2116",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "2117",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2118",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2121",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2122",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2120",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2119",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2123",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2124",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-017",
+      "name": "Music & Guitar Monogram Signs",
+      "group": "Music & Guitar Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "2372",
+      "variants": [
+        {
+          "design": "2372",
+          "label": "Music Monogram 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "2373",
+          "label": "Music Monogram 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2374",
+          "label": "Music Monogram 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2370",
+          "label": "Music Monogram 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2371",
+          "label": "Music Monogram 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2369",
+          "label": "Music Monogram 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2368",
+          "label": "Music Monogram 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2366",
+          "label": "Music Monogram 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2367",
+          "label": "Music Monogram 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "2375",
+          "label": "Music Monogram 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0959",
+          "label": "Guitar Monogram Frame",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-018",
+      "name": "Axe Monogram Signs",
+      "group": "Axe Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "1652",
+      "variants": [
+        {
+          "design": "1652",
+          "label": "Style 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1654",
+          "label": "Style 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1655",
+          "label": "Style 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1656",
+          "label": "Style 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1657",
+          "label": "Style 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1658",
+          "label": "Style 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1659",
+          "label": "Style 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1660",
+          "label": "Style 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1661",
+          "label": "Style 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1653",
+          "label": "Style 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-019",
+      "name": "Seasonal & Holiday Monogram Signs",
+      "group": "Seasonal & Holiday Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "0770",
+      "variants": [
+        {
+          "design": "0770",
+          "label": "Snow Monogram Letter 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0774",
+          "label": "Snow Split Monogram 1",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0771",
+          "label": "Snow Monogram Letter 2",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0772",
+          "label": "Snow Monogram Letter 3",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0773",
+          "label": "Snow Monogram Letter 4",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0463",
+          "label": "Happy Halloween Pumpkins Monogram",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0466",
+          "label": "Happy Halloween Spider Web Monogram",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0476",
+          "label": "Welcome Pumpkins Monogram",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0479",
+          "label": "Welcome Spider Monogram Sign",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0769",
+          "label": "Alphabet Turquey",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0885",
+          "label": "Christmas Tree Monogram",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1052",
+          "label": "Pumpkin Monogram Frame",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1154",
+          "label": "Turkey Monogram",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1663",
+          "label": "Merry Christmas Monogram Fancy Metal",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-MONO-020",
+      "name": "Decorative Home Monogram Signs",
+      "group": "Decorative Home Monogram Styles",
+      "variantType": "Style",
+      "primaryDesign": "0913",
+      "variants": [
+        {
+          "design": "0913",
+          "label": "Dream Catcher Monogram Frame",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0978",
+          "label": "Infinity Monogram",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1015",
+          "label": "Monogram Mason Jar",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1016",
+          "label": "Monogram Round Deco",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1233",
+          "label": "Monogram Round Fleur",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1242",
+          "label": "Scroll Monogram",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1299",
+          "label": "Stone Firepit Monogram Welcome",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
