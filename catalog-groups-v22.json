@@ -1,0 +1,235 @@
+{
+  "version": 22,
+  "generatedFrom": "MB1 grouped storefront expansion requested 2026-09-16",
+  "groupCount": 2,
+  "groups": [
+    {
+      "id": "MB1-GROUP-025",
+      "name": "Antler Base Letter Signs",
+      "group": "Antler Base Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0541",
+      "variants": [
+        {
+          "design": "0541",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0542",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0543",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0544",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0545",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0546",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0547",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0548",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0549",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0550",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0551",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0552",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0553",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0554",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0555",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0556",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0557",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0558",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0559",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0560",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0561",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0562",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0563",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0564",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0565",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0566",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-GROUP-026",
+      "name": "Truck Signs",
+      "group": "Truck Sign Collection",
+      "variantType": "Style",
+      "primaryDesign": "1068",
+      "variants": [
+        {
+          "design": "1068",
+          "label": "Semi Front End",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1069",
+          "label": "Semi Truck",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0925",
+          "label": "Fall Truck",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0884",
+          "label": "Christmas Tree & Truck",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

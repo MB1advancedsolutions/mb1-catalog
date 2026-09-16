@@ -1,0 +1,137 @@
+name: Apply MB1 V22 Antler and Truck Grouping
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-v22-antler-truck-grouping.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply-v22:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out catalog
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Add Antler Base and Truck grouped products
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          antler = []
+          for i, letter in enumerate('ABCDEFGHIJKLMNOPQRSTUVWXYZ', start=1):
+              antler.append({
+                  'design': f'{540+i:04d}',
+                  'label': f'Letter {letter}',
+                  'sort': i,
+                  'primary': i == 1,
+                  'visible': True,
+              })
+
+          trucks = [
+              {'design':'1068','label':'Semi Front End','sort':1,'primary':True,'visible':True},
+              {'design':'1069','label':'Semi Truck','sort':2,'primary':False,'visible':True},
+              {'design':'0925','label':'Fall Truck','sort':3,'primary':False,'visible':True},
+              {'design':'0884','label':'Christmas Tree & Truck','sort':4,'primary':False,'visible':True},
+          ]
+
+          cfg = {
+              'version': 22,
+              'generatedFrom': 'MB1 grouped storefront expansion requested 2026-09-16',
+              'groupCount': 2,
+              'groups': [
+                  {
+                      'id':'MB1-GROUP-025',
+                      'name':'Antler Base Letter Signs',
+                      'group':'Antler Base Alphabet',
+                      'variantType':'Letter',
+                      'primaryDesign':'0541',
+                      'variants':antler,
+                  },
+                  {
+                      'id':'MB1-GROUP-026',
+                      'name':'Truck Signs',
+                      'group':'Truck Sign Collection',
+                      'variantType':'Style',
+                      'primaryDesign':'1068',
+                      'variants':trucks,
+                  },
+              ],
+          }
+          Path('catalog-groups-v22.json').write_text(json.dumps(cfg, indent=2)+'\n', encoding='utf-8')
+
+          js_path = Path('monogram-grouping-v20.js')
+          js = js_path.read_text(encoding='utf-8')
+
+          old = """  Promise.all([\n    fetch('monogram-groups-v20.json?v=20').then(r=>{if(!r.ok)throw new Error('Monogram grouping config '+r.status);return r.json();}),\n    fetch('catalog-groups-v21.json?v=21').then(r=>{if(!r.ok)throw new Error('Catalog grouping config '+r.status);return r.json();})\n  ])\n    .then(([baseCfg,extraCfg])=>{\n      CONFIG={version:21,groups:[...(baseCfg.groups||[]),...(extraCfg.groups||[])]};\n      buildMaps();\n      applyOverrides();\n    })"""
+
+          new = """  Promise.all([\n    fetch('monogram-groups-v20.json?v=20').then(r=>{if(!r.ok)throw new Error('Monogram grouping config '+r.status);return r.json();}),\n    fetch('catalog-groups-v21.json?v=21').then(r=>{if(!r.ok)throw new Error('Catalog grouping config V21 '+r.status);return r.json();}),\n    fetch('catalog-groups-v22.json?v=22').then(r=>{if(!r.ok)throw new Error('Catalog grouping config V22 '+r.status);return r.json();})\n  ])\n    .then(([baseCfg,extraCfg,v22Cfg])=>{\n      CONFIG={version:22,groups:[...(baseCfg.groups||[]),...(extraCfg.groups||[]),...(v22Cfg.groups||[])]};\n      buildMaps();\n      applyOverrides();\n    })"""
+
+          if old in js:
+              js = js.replace(old, new, 1)
+          elif "catalog-groups-v22.json?v=22" not in js:
+              raise SystemExit('Could not locate V21 configuration loader in monogram-grouping-v20.js')
+
+          js_path.write_text(js, encoding='utf-8')
+          PY
+
+      - name: Verify V22 grouping and protected behavior
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          v20 = json.loads(Path('monogram-groups-v20.json').read_text(encoding='utf-8'))
+          v21 = json.loads(Path('catalog-groups-v21.json').read_text(encoding='utf-8'))
+          v22 = json.loads(Path('catalog-groups-v22.json').read_text(encoding='utf-8'))
+
+          assert v22['groupCount'] == 2
+          byid = {g['id']:g for g in v22['groups']}
+          assert len(byid['MB1-GROUP-025']['variants']) == 26
+          assert byid['MB1-GROUP-025']['variants'][0]['design'] == '0541'
+          assert byid['MB1-GROUP-025']['variants'][-1]['design'] == '0566'
+          assert [v['design'] for v in byid['MB1-GROUP-026']['variants']] == ['1068','1069','0925','0884']
+
+          seen = {}
+          for cfg in (v20, v21, v22):
+              for g in cfg.get('groups',[]):
+                  for v in g.get('variants',[]):
+                      d = v['design']
+                      if d in seen:
+                          raise SystemExit(f'Duplicate grouped design {d}: {seen[d]} and {g["id"]}')
+                      seen[d] = g['id']
+
+          js = Path('monogram-grouping-v20.js').read_text(encoding='utf-8')
+          for token in [
+              "catalog-groups-v22.json?v=22",
+              'CONFIG={version:22',
+              'updateCheckout()',
+              'renderGallery(d)',
+              'putDesignInAddressBar',
+              'updateCustomizeLink()',
+          ]:
+              assert token in js, token
+          print('V22 grouping verification passed.')
+          PY
+
+      - name: Commit V22 live catalog grouping
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo 'V22 grouping is already installed.'
+            exit 0
+          fi
+          git config user.name 'MB1 Catalog Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add monogram-grouping-v20.js catalog-groups-v22.json
+          git commit -m 'group antler base and truck designs'
+          git push origin main
