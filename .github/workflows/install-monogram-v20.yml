@@ -1,0 +1,110 @@
+name: Install MB1 Monogram Storefront V20
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/install-monogram-v20.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out catalog
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Install V20 layer in live catalog pages
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          pages = [
+              'index.html',
+              'customizable.html',
+              'family-and-name.html',
+              'beach-and-coastal.html',
+              'lake-house-and-nautical.html',
+              'farm-and-western.html',
+              'home-decor-and-inspirational.html',
+              'seasonal-and-holiday.html',
+              'sports-and-hobbies.html',
+              'wildlife-and-outdoors.html',
+              'address-and-property.html',
+              'memorial-and-tribute.html',
+              'wedding-and-events.html',
+              'garage-and-workshop.html',
+          ]
+          marker = '<script src="monogram-grouping-v20.js?v=20"></script>'
+
+          missing = []
+          changed = []
+          for name in pages:
+              path = Path(name)
+              if not path.exists():
+                  missing.append(name)
+                  continue
+              text = path.read_text(encoding='utf-8')
+              if marker in text:
+                  continue
+              if '</body>' not in text:
+                  raise SystemExit(f'Cannot install V20 in {name}: </body> not found')
+              text = text.replace('</body>', marker + '\n</body>', 1)
+              path.write_text(text, encoding='utf-8')
+              changed.append(name)
+
+          if missing:
+              raise SystemExit('Missing expected catalog pages: ' + ', '.join(missing))
+
+          print('Updated pages:')
+          for name in changed:
+              print(' -', name)
+          PY
+
+      - name: Verify protected catalog behavior is still present
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          required = [
+              'updateCheckout()',
+              'shippingStatus',
+              'directProductUrl',
+              'renderGallery',
+              'STRIPE_LINKS',
+              'CUSTOM_FORM_BASE',
+          ]
+          pages = ['index.html','customizable.html','family-and-name.html','beach-and-coastal.html','lake-house-and-nautical.html','farm-and-western.html','home-decor-and-inspirational.html','seasonal-and-holiday.html','sports-and-hobbies.html','wildlife-and-outdoors.html','address-and-property.html','memorial-and-tribute.html','wedding-and-events.html','garage-and-workshop.html']
+          marker = '<script src="monogram-grouping-v20.js?v=20"></script>'
+          for page in pages:
+              text = Path(page).read_text(encoding='utf-8')
+              if marker not in text:
+                  raise SystemExit(f'V20 marker missing from {page}')
+              missing = [token for token in required if token not in text]
+              if missing:
+                  raise SystemExit(f'{page} lost protected behavior tokens: {missing}')
+          if not Path('monogram-grouping-v20.js').exists():
+              raise SystemExit('monogram-grouping-v20.js is missing')
+          if not Path('monogram-groups-v20.json').exists():
+              raise SystemExit('monogram-groups-v20.json is missing')
+          print('V20 installation verification passed.')
+          PY
+
+      - name: Commit live page installation
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo 'V20 is already installed; no commit needed.'
+            exit 0
+          fi
+          git config user.name 'MB1 Catalog Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html customizable.html family-and-name.html beach-and-coastal.html lake-house-and-nautical.html farm-and-western.html home-decor-and-inspirational.html seasonal-and-holiday.html sports-and-hobbies.html wildlife-and-outdoors.html address-and-property.html memorial-and-tribute.html wedding-and-events.html garage-and-workshop.html
+          git commit -m 'install MB1 Monogram Storefront V20 on live catalog pages'
+          git push origin main
