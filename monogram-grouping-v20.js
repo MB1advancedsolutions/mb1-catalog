@@ -223,7 +223,7 @@
       grid.innerHTML=filtered.map(p=>`<article class="card"><div class="art"><img loading="lazy" src="${esc(p.thumb)}" alt="${esc(p.alt||p.name)}"></div><div class="info"><div class="cat">${esc(categoryLabel(c||p.category))}</div><div class="name">${esc(p.name)}</div>${p._mb1Grouped?`<div class="style-count">${p.children.length} styles in one item</div>`:''}<div class="meta">${esc(p._mb1Grouped?(p.children.length+' design options'):p.sku)}<br><span class="price">From $49</span> · 8&quot;–48&quot;</div><button class="view-button" data-display-key="${esc(p._mb1Grouped?p.groupId:norm(p.design))}">${p._mb1Grouped?'Choose Style':'View Design'}</button></div></article>`).join('');
       grid.querySelectorAll('.view-button').forEach(btn=>btn.addEventListener('click',()=>{
         const key=btn.dataset.displayKey;
-        const p=key.startsWith('MB1-MONO-')?buildDisplayProducts().find(x=>x._mb1Grouped&&x.groupId===key):(PRODUCTS||[]).find(x=>norm(x.design)===norm(key));
+        const p=groupById.has(key)?buildDisplayProducts().find(x=>x._mb1Grouped&&x.groupId===key):(PRODUCTS||[]).find(x=>norm(x.design)===norm(key));
         if(!p)return;
         if(p._mb1Grouped)openGrouped(p,p.design,true);else openProductData(childData(p),true);
       }));
@@ -251,8 +251,14 @@
     }
   }
 
-  fetch('monogram-groups-v20.json?v=20')
-    .then(r=>{if(!r.ok)throw new Error('Grouping config '+r.status);return r.json();})
-    .then(cfg=>{CONFIG=cfg;buildMaps();applyOverrides();})
-    .catch(err=>console.warn('MB1 monogram grouping not loaded:',err));
+  Promise.all([
+    fetch('monogram-groups-v20.json?v=20').then(r=>{if(!r.ok)throw new Error('Monogram grouping config '+r.status);return r.json();}),
+    fetch('catalog-groups-v21.json?v=21').then(r=>{if(!r.ok)throw new Error('Catalog grouping config '+r.status);return r.json();})
+  ])
+    .then(([baseCfg,extraCfg])=>{
+      CONFIG={version:21,groups:[...(baseCfg.groups||[]),...(extraCfg.groups||[])]};
+      buildMaps();
+      applyOverrides();
+    })
+    .catch(err=>console.warn('MB1 product grouping not loaded:',err));
 })();
