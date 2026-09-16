@@ -89,3 +89,19 @@
   max-height: none !important;
   overflow: visible !important;
 }
+/* MB1 full product image fit */
+#modalImg {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: calc(100vh - 130px) !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+#galleryMain {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
