@@ -1,0 +1,77 @@
+#mb1StyleBox {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+#mb1StyleSelect {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#mb1StyleThumbs {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  max-height: 420px !important;
+  margin: 0 !important;
+  padding: 4px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  align-items: start !important;
+}
+
+#mb1StyleThumbs > * {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#mb1StyleThumbs > * img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 110px !important;
+  object-fit: contain !important;
+  box-sizing: border-box !important;
+}
+
+#mb1StyleSelected {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#mb1StyleBox,
+#mb1StyleBox * {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+  #mb1StyleThumbs {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #mb1StyleThumbs {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    max-height: 390px !important;
+  }
+
+  #mb1StyleThumbs > * img {
+    height: 96px !important;
+  }
+}
