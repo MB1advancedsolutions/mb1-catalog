@@ -1,0 +1,1125 @@
+{
+  "version": 21,
+  "generatedFrom": "MB1 catalog grouping expansion updated 2026-09-16",
+  "groupCount": 6,
+  "groups": [
+    {
+      "id": "MB1-GROUP-021",
+      "name": "Split Scroll Letter Signs",
+      "group": "Split Scroll Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0697",
+      "variants": [
+        {
+          "design": "0697",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0698",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0699",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0700",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0701",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0702",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0703",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0704",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0705",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0706",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0707",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0708",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0709",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0710",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0711",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0712",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0713",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0714",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0715",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0716",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0717",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0718",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0719",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0720",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0721",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0722",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-GROUP-022",
+      "name": "Steampunk Letter Monogram Signs",
+      "group": "Steampunk Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0723",
+      "variants": [
+        {
+          "design": "0723",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0724",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0725",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0726",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0727",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0728",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0729",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0730",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0731",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0732",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0733",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0734",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0735",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0737",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0738",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0739",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0740",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0741",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0742",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0743",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0744",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0745",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0746",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0747",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0748",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0749",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-GROUP-023",
+      "name": "Bee & Honeycomb Signs",
+      "group": "Bee and Honeycomb Collection",
+      "variantType": "Style",
+      "primaryDesign": "0070",
+      "variants": [
+        {
+          "design": "0070",
+          "label": "Bee Honeycomb 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0071",
+          "label": "Bee Honeycomb 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0072",
+          "label": "Bee Honeycomb 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0073",
+          "label": "Bee Honeycomb 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0074",
+          "label": "Bee Honeycomb 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0075",
+          "label": "Bee Honeycomb 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0076",
+          "label": "Bees & Honeycomb 1",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0077",
+          "label": "Bees & Honeycomb 2",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0078",
+          "label": "Bees & Honeycomb 3",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0079",
+          "label": "Bees & Honeycomb 4",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0080",
+          "label": "Bees & Honeycomb 5",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0081",
+          "label": "Bees & Honeycomb 6",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0082",
+          "label": "Bees & Honeycomb 7",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0083",
+          "label": "Bees & Honeycomb 8",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0084",
+          "label": "Bees & Honeycomb 9",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0085",
+          "label": "Bees & Honeycomb 10",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0086",
+          "label": "Bees & Honeycomb 11",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0087",
+          "label": "Bees & Honeycomb 12",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0088",
+          "label": "Bees & Honeycomb 13",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0089",
+          "label": "Bees & Honeycomb 14",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0090",
+          "label": "Bees & Honeycomb 15",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0091",
+          "label": "Bees & Honeycomb 16",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0092",
+          "label": "Bees & Honeycomb 17",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0093",
+          "label": "Bees & Honeycomb 18",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0094",
+          "label": "Bees & Honeycomb 19",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0095",
+          "label": "Bees & Honeycomb 20",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0096",
+          "label": "Bees & Honeycomb 21",
+          "sort": 27,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0097",
+          "label": "Bees & Honeycomb 22",
+          "sort": 28,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0098",
+          "label": "Bees & Honeycomb 23",
+          "sort": 29,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0099",
+          "label": "Bees & Honeycomb 24",
+          "sort": 30,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0100",
+          "label": "Bees & Honeycomb 25",
+          "sort": 31,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0101",
+          "label": "Bees & Honeycomb 26",
+          "sort": 32,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0102",
+          "label": "Bees & Honeycomb 27",
+          "sort": 33,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0103",
+          "label": "Bees & Honeycomb 28",
+          "sort": 34,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0104",
+          "label": "Bees & Honeycomb 29",
+          "sort": 35,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0105",
+          "label": "Bees & Honeycomb 30",
+          "sort": 36,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-GROUP-024",
+      "name": "Classic Cars & Trucks Signs",
+      "group": "Classic Cars and Trucks Collection",
+      "variantType": "Style",
+      "primaryDesign": "0106",
+      "variants": [
+        {
+          "design": "0106",
+          "label": "Car Front End 1",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0114",
+          "label": "Car Front End 2",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0115",
+          "label": "Car Front End 3",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0116",
+          "label": "Car Front End 4",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0117",
+          "label": "Car Front End 5",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0118",
+          "label": "Car Front End 6",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0119",
+          "label": "Car Front End 7",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0120",
+          "label": "Car Front End 8",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0121",
+          "label": "Car Front End 9",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0107",
+          "label": "Car Front End 10",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0108",
+          "label": "Car Front End 11",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0109",
+          "label": "Car Front End 12",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0110",
+          "label": "Car Front End 13",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0111",
+          "label": "Car Front End 14",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0112",
+          "label": "Car Front End 15",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0113",
+          "label": "Car Front End 16",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0971",
+          "label": "Hot Rod Truck",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0972",
+          "label": "Hot Rod with Flames",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0973",
+          "label": "Hot Rod",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0974",
+          "label": "Hot Rod 2",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0975",
+          "label": "Hot Rod Front View",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-GROUP-025",
+      "name": "Antler Base Letter Signs",
+      "group": "Antler Base Alphabet",
+      "variantType": "Letter",
+      "primaryDesign": "0541",
+      "variants": [
+        {
+          "design": "0541",
+          "label": "Letter A",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "0542",
+          "label": "Letter B",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0543",
+          "label": "Letter C",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0544",
+          "label": "Letter D",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0545",
+          "label": "Letter E",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0546",
+          "label": "Letter F",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0547",
+          "label": "Letter G",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0548",
+          "label": "Letter H",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0549",
+          "label": "Letter I",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0550",
+          "label": "Letter J",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0551",
+          "label": "Letter K",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0552",
+          "label": "Letter L",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0553",
+          "label": "Letter M",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0554",
+          "label": "Letter N",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0555",
+          "label": "Letter O",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0556",
+          "label": "Letter P",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0557",
+          "label": "Letter Q",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0558",
+          "label": "Letter R",
+          "sort": 18,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0559",
+          "label": "Letter S",
+          "sort": 19,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0560",
+          "label": "Letter T",
+          "sort": 20,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0561",
+          "label": "Letter U",
+          "sort": 21,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0562",
+          "label": "Letter V",
+          "sort": 22,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0563",
+          "label": "Letter W",
+          "sort": 23,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0564",
+          "label": "Letter X",
+          "sort": 24,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0565",
+          "label": "Letter Y",
+          "sort": 25,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "0566",
+          "label": "Letter Z",
+          "sort": 26,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "MB1-GROUP-026",
+      "name": "Truck Signs",
+      "group": "Truck Design Collection",
+      "variantType": "Style",
+      "primaryDesign": "1614",
+      "variants": [
+        {
+          "design": "1614",
+          "label": "Truck 001",
+          "sort": 1,
+          "primary": true,
+          "visible": true
+        },
+        {
+          "design": "1615",
+          "label": "Truck 002",
+          "sort": 2,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1616",
+          "label": "Truck 003",
+          "sort": 3,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1617",
+          "label": "Truck 004",
+          "sort": 4,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1618",
+          "label": "Truck 005",
+          "sort": 5,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1619",
+          "label": "Truck 006",
+          "sort": 6,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1620",
+          "label": "Truck 007",
+          "sort": 7,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1621",
+          "label": "Truck 008",
+          "sort": 8,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1622",
+          "label": "Truck 009",
+          "sort": 9,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1623",
+          "label": "Truck 010",
+          "sort": 10,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1624",
+          "label": "Truck 011",
+          "sort": 11,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1625",
+          "label": "Truck 012",
+          "sort": 12,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1626",
+          "label": "Truck 013",
+          "sort": 13,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1627",
+          "label": "Truck 014",
+          "sort": 14,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1628",
+          "label": "Truck 015",
+          "sort": 15,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1629",
+          "label": "Truck 016",
+          "sort": 16,
+          "primary": false,
+          "visible": true
+        },
+        {
+          "design": "1630",
+          "label": "Truck 017",
+          "sort": 17,
+          "primary": false,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
