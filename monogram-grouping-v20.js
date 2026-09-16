@@ -253,10 +253,11 @@
 
   Promise.all([
     fetch('monogram-groups-v20.json?v=20').then(r=>{if(!r.ok)throw new Error('Monogram grouping config '+r.status);return r.json();}),
-    fetch('catalog-groups-v21.json?v=21').then(r=>{if(!r.ok)throw new Error('Catalog grouping config '+r.status);return r.json();})
+    fetch('catalog-groups-v21.json?v=21').then(r=>{if(!r.ok)throw new Error('Catalog grouping config V21 '+r.status);return r.json();}),
+    fetch('catalog-groups-v22.json?v=22').then(r=>{if(!r.ok)throw new Error('Catalog grouping config V22 '+r.status);return r.json();})
   ])
-    .then(([baseCfg,extraCfg])=>{
-      CONFIG={version:21,groups:[...(baseCfg.groups||[]),...(extraCfg.groups||[])]};
+    .then(([baseCfg,extraCfg,v22Cfg])=>{
+      CONFIG={version:22,groups:[...(baseCfg.groups||[]),...(extraCfg.groups||[]),...(v22Cfg.groups||[])]};
       buildMaps();
       applyOverrides();
     })
