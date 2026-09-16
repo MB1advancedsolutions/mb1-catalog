@@ -1,0 +1,60 @@
+name: Apply MB1 V21 Grouping
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-v21-grouping.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Patch grouping loader
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('monogram-grouping-v20.js')
+          s = p.read_text(encoding='utf-8')
+          old = "const p=key.startsWith('MB1-MONO-')?buildDisplayProducts().find(x=>x._mb1Grouped&&x.groupId===key):(PRODUCTS||[]).find(x=>norm(x.design)===norm(key));"
+          new = "const p=groupById.has(key)?buildDisplayProducts().find(x=>x._mb1Grouped&&x.groupId===key):(PRODUCTS||[]).find(x=>norm(x.design)===norm(key));"
+          if old in s:
+              s = s.replace(old, new, 1)
+          fetch_old = "  fetch('monogram-groups-v20.json?v=20')\n    .then(r=>{if(!r.ok)throw new Error('Grouping config '+r.status);return r.json();})\n    .then(cfg=>{CONFIG=cfg;buildMaps();applyOverrides();})\n    .catch(err=>console.warn('MB1 monogram grouping not loaded:',err));"
+          fetch_new = "  Promise.all([\n    fetch('monogram-groups-v20.json?v=20').then(r=>{if(!r.ok)throw new Error('Monogram grouping config '+r.status);return r.json();}),\n    fetch('catalog-groups-v21.json?v=21').then(r=>{if(!r.ok)throw new Error('Catalog grouping config '+r.status);return r.json();})\n  ])\n    .then(([baseCfg,extraCfg])=>{\n      CONFIG={version:21,groups:[...(baseCfg.groups||[]),...(extraCfg.groups||[])]};\n      buildMaps();\n      applyOverrides();\n    })\n    .catch(err=>console.warn('MB1 product grouping not loaded:',err));"
+          if fetch_old in s:
+              s = s.replace(fetch_old, fetch_new, 1)
+          if "catalog-groups-v21.json?v=21" not in s:
+              raise SystemExit('V21 config loader was not installed')
+          if 'groupById.has(key)' not in s:
+              raise SystemExit('Generic grouped-card lookup was not installed')
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Verify files
+        run: |
+          test -f catalog-groups-v21.json
+          grep -q "catalog-groups-v21.json?v=21" monogram-grouping-v20.js
+          grep -q "groupById.has(key)" monogram-grouping-v20.js
+          grep -q "renderGallery(d)" monogram-grouping-v20.js
+          grep -q "updateCheckout()" monogram-grouping-v20.js
+
+      - name: Commit V21 grouping
+        run: |
+          if git diff --quiet; then
+            echo 'Already applied.'
+            exit 0
+          fi
+          git config user.name 'MB1 Catalog Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add monogram-grouping-v20.js
+          git commit -m 'activate V21 product grouping expansion'
+          git push origin main
