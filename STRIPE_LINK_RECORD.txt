@@ -1,26 +1,34 @@
-MB1 STRIPE LINK RECORD — PRICING V20 — 2026-09-20
+MB1 STRIPE LINK RECORD — PRICING & SHIPPING V21 — 2026-09-20
 
-CURRENT BASE PRICES
-8" $65
-12" $69
-18" $119
-24" $149
-30" $195
-36" $265
-48" $349
+CURRENT BASE PRICES / STANDARD SHIPPING / CHECKOUT SUBTOTAL BEFORE TAX
+8"  $65  + $9.95 shipping   = $74.95
+12" $69  + $11.95 shipping  = $80.95
+18" $119 + $16.95 shipping  = $135.95
+24" $149 + $29.95 shipping  = $178.95
+30" $195 + $74.95 shipping  = $269.95
+36" $265 + $74.95 shipping  = $339.95
+48" $349 + $199.95 shipping = $548.95
 
-SHIPPING
-Shipping is charged separately on standard orders.
-Free shipping is reserved for explicit promotional sales.
+CURRENT PUBLIC PAYMENT LINKS
+8"  https://buy.stripe.com/4gM7sN80y3ssg5Hao82VG07
+12" https://buy.stripe.com/dRmaEZ1Ca6EE06J3ZK2VG08
+18" https://buy.stripe.com/fZu6oJa8G0ggf1D53O2VG09
+24" https://buy.stripe.com/8x200l80y6EEg5HeEo2VG04
+30" https://buy.stripe.com/14A3cx6Wu1kkdXzfIs2VG05
+36" https://buy.stripe.com/fZu14pcgOaUU1aN67S2VG01
+48" https://buy.stripe.com/aFa8wR80y7IIf1DeEo2VG06
 
-IMPORTANT
-The prior Stripe Payment Links are retained only for admin reference. The public catalog currently routes orders through the shipping-quote workflow because the old links contain outdated product prices and/or old fixed/free shipping settings.
+STANDARD SHIPPING POLICY
+- Customer pays shipping on standard orders.
+- Flat shipping is assigned by sign size.
+- Free shipping is reserved for explicit promotional sales.
+- Standard rates are intended for the contiguous United States.
+- Alaska, Hawaii, U.S. territories, expedited shipping, and unusual/custom packages may require additional shipping.
 
-PREVIOUS LINKS — DO NOT USE AS CURRENT PUBLIC CHECKOUT
-8" old $49  https://buy.stripe.com/14AbJ380yaUU8Df8g02VG00
-12" old $69  https://buy.stripe.com/bJe3cxdkS4wwcTv53O2VG02
-18" old $109 https://buy.stripe.com/6oU14pgx47II4mZcwg2VG03
-24" old $149 https://buy.stripe.com/8x200l80y6EEg5HeEo2VG04
-30" old $195 https://buy.stripe.com/14A3cx6Wu1kkdXzfIs2VG05
-36" old $265 https://buy.stripe.com/fZu14pcgOaUU1aN67S2VG01
-48" old $349 https://buy.stripe.com/aFa8wR80y7IIf1DeEo2VG06
+DEACTIVATED / OBSOLETE LINKS
+8" old checkout total $58.95 — deactivated
+12" old checkout total $81.95 — deactivated
+18" old product-only $109.00 — deactivated
+
+NOTE
+The 24", 30", 36", and 48" Payment Link URLs were retained and their shipping settings were updated in Stripe.
