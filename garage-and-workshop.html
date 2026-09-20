@@ -62,7 +62,6 @@ function updateCheckout(){
   const size=modalSize.value;
   const color=modalColor.value;
   const price=PRICE_MAP[size];
-
   modalTotal.textContent=price ? '
   if(!currentDesign)return;
   const params=new URLSearchParams();
@@ -176,7 +175,6 @@ buyNow.addEventListener('click',()=>{
 </body></html>+price : '';
   shippingStatus.innerHTML='<strong>Shipping</strong>Shipping is charged separately based on package size, weight, and destination. Free shipping applies only when an MB1 promotion specifically says so.';
   oversizeQuote.style.display='none';
-
   const params=new URLSearchParams();
   params.set(OVERSIZE_DESIGN_ENTRY,'MB1-'+currentDesign);
   params.set(OVERSIZE_SIZE_ENTRY,size+'"');
