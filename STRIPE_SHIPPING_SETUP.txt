@@ -1,4 +1,4 @@
-MB1 STRIPE SHIPPING SETUP — PRICING V20 — 2026-09-20
+MB1 STRIPE SHIPPING SETUP — PRICING & SHIPPING V21 — 2026-09-20
 
 CURRENT BASE PRICES
 8"=$65
@@ -9,18 +9,38 @@ CURRENT BASE PRICES
 36"=$265
 48"=$349
 
-STANDARD POLICY
-- Shipping is charged separately for every size.
-- Free shipping is used only for explicit promotional sales.
-- Final shipping should reflect current packed size, packed weight, destination, and current carrier/Pirate Ship rate.
+CURRENT FLAT STANDARD SHIPPING
+8"=$9.95
+12"=$11.95
+18"=$16.95
+24"=$29.95
+30"=$74.95
+36"=$74.95
+48"=$199.95
 
-PUBLIC WEBSITE STATUS
-Direct Stripe Payment Links are temporarily bypassed so customers cannot receive the old $49/$109 prices or old fixed/free shipping settings.
+EXPECTED CHECKOUT SUBTOTALS BEFORE TAX
+8"=$74.95
+12"=$80.95
+18"=$135.95
+24"=$178.95
+30"=$269.95
+36"=$339.95
+48"=$548.95
 
-BEFORE RE-ENABLING DIRECT PAY NOW
-1. Update/create Stripe prices to the current base prices.
-2. Remove permanent free-shipping settings.
-3. Remove obsolete fixed shipping rates unless intentionally current.
-4. Verify shipping-address collection.
-5. Test all seven sizes.
-6. Replace the retired links in STRIPE_LINK_RECORD.txt.
+STRIPE STATUS
+- Seven active Payment Links are configured for the current product prices and standard shipping.
+- Customer billing/shipping addresses are collected.
+- Quantity adjustment is disabled.
+- Shipping is customer-paid.
+- Automatic tax settings were left unchanged.
+- Old $58.95, $81.95, and $109.00 checkout links were deactivated.
+- Free shipping is reserved for explicit promotional sales.
+
+WEBSITE STATUS
+- Direct Pay Now checkout is enabled by selected sign size.
+- The product modal shows the size-specific shipping amount and checkout subtotal before tax.
+- All seven current Stripe Payment Links are mapped to the corresponding size.
+- Standard shipping rates are documented in shipping-policy.html.
+
+OPERATING NOTE
+Rates should be reviewed periodically against current Pirate Ship/carrier pricing, especially 30", 36", and 48" packages.
