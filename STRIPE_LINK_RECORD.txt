@@ -18,17 +18,7 @@ CURRENT PUBLIC PAYMENT LINKS
 36" https://buy.stripe.com/fZu14pcgOaUU1aN67S2VG01
 48" https://buy.stripe.com/aFa8wR80y7IIf1DeEo2VG06
 
-STANDARD SHIPPING POLICY
-- Customer pays shipping on standard orders.
-- Flat shipping is assigned by sign size.
-- Free shipping is reserved for explicit promotional sales.
-- Standard rates are intended for the contiguous United States.
-- Alaska, Hawaii, U.S. territories, expedited shipping, and unusual/custom packages may require additional shipping.
-
 DEACTIVATED / OBSOLETE LINKS
 8" old checkout total $58.95 — deactivated
 12" old checkout total $81.95 — deactivated
 18" old product-only $109.00 — deactivated
-
-NOTE
-The 24", 30", 36", and 48" Payment Link URLs were retained and their shipping settings were updated in Stripe.

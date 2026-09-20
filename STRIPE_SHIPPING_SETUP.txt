@@ -1,6 +1,6 @@
-MB1 STRIPE SHIPPING SETUP — PRICING & SHIPPING V21 — 2026-09-20
+MB1 STRIPE SHIPPING SETUP — V21 — 2026-09-20
 
-CURRENT BASE PRICES
+BASE PRICES
 8"=$65
 12"=$69
 18"=$119
@@ -9,7 +9,7 @@ CURRENT BASE PRICES
 36"=$265
 48"=$349
 
-CURRENT FLAT STANDARD SHIPPING
+FLAT STANDARD SHIPPING
 8"=$9.95
 12"=$11.95
 18"=$16.95
@@ -18,7 +18,7 @@ CURRENT FLAT STANDARD SHIPPING
 36"=$74.95
 48"=$199.95
 
-EXPECTED CHECKOUT SUBTOTALS BEFORE TAX
+CHECKOUT SUBTOTALS BEFORE TAX
 8"=$74.95
 12"=$80.95
 18"=$135.95
@@ -27,20 +27,4 @@ EXPECTED CHECKOUT SUBTOTALS BEFORE TAX
 36"=$339.95
 48"=$548.95
 
-STRIPE STATUS
-- Seven active Payment Links are configured for the current product prices and standard shipping.
-- Customer billing/shipping addresses are collected.
-- Quantity adjustment is disabled.
-- Shipping is customer-paid.
-- Automatic tax settings were left unchanged.
-- Old $58.95, $81.95, and $109.00 checkout links were deactivated.
-- Free shipping is reserved for explicit promotional sales.
-
-WEBSITE STATUS
-- Direct Pay Now checkout is enabled by selected sign size.
-- The product modal shows the size-specific shipping amount and checkout subtotal before tax.
-- All seven current Stripe Payment Links are mapped to the corresponding size.
-- Standard shipping rates are documented in shipping-policy.html.
-
-OPERATING NOTE
-Rates should be reviewed periodically against current Pirate Ship/carrier pricing, especially 30", 36", and 48" packages.
+The website maps each selected size directly to its corresponding active Stripe Payment Link.
