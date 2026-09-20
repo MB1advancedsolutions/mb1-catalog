@@ -1,7 +1,26 @@
-8" $49 https://buy.stripe.com/14AbJ380yaUU8Df8g02VG00
-12" $69 https://buy.stripe.com/bJe3cxdkS4wwcTv53O2VG02
-18" $109 https://buy.stripe.com/6oU14pgx47II4mZcwg2VG03
-24" $149 https://buy.stripe.com/8x200l80y6EEg5HeEo2VG04
-30" $195 https://buy.stripe.com/14A3cx6Wu1kkdXzfIs2VG05
-36" $265 https://buy.stripe.com/fZu14pcgOaUU1aN67S2VG01
-48" $349 https://buy.stripe.com/aFa8wR80y7IIf1DeEo2VG06
+MB1 STRIPE LINK RECORD — PRICING V20 — 2026-09-20
+
+CURRENT BASE PRICES
+8" $65
+12" $69
+18" $119
+24" $149
+30" $195
+36" $265
+48" $349
+
+SHIPPING
+Shipping is charged separately on standard orders.
+Free shipping is reserved for explicit promotional sales.
+
+IMPORTANT
+The prior Stripe Payment Links are retained only for admin reference. The public catalog currently routes orders through the shipping-quote workflow because the old links contain outdated product prices and/or old fixed/free shipping settings.
+
+PREVIOUS LINKS — DO NOT USE AS CURRENT PUBLIC CHECKOUT
+8" old $49  https://buy.stripe.com/14AbJ380yaUU8Df8g02VG00
+12" old $69  https://buy.stripe.com/bJe3cxdkS4wwcTv53O2VG02
+18" old $109 https://buy.stripe.com/6oU14pgx47II4mZcwg2VG03
+24" old $149 https://buy.stripe.com/8x200l80y6EEg5HeEo2VG04
+30" old $195 https://buy.stripe.com/14A3cx6Wu1kkdXzfIs2VG05
+36" old $265 https://buy.stripe.com/fZu14pcgOaUU1aN67S2VG01
+48" old $349 https://buy.stripe.com/aFa8wR80y7IIf1DeEo2VG06
