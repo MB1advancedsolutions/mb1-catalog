@@ -30,7 +30,7 @@ fetch('catalog-data.json').then(r=>{if(!r.ok)throw new Error('catalog');return r
  const products=data.filter(p=>RELIGIOUS_IDS.has(normalizeId(p.design))).sort((a,b)=>normalizeId(a.design).localeCompare(normalizeId(b.design)));
  summary.textContent=products.length.toLocaleString()+' Religious designs';
  if(!products.length){empty.style.display='block';return}
- grid.innerHTML=products.map(p=>{const id=normalizeId(p.design);return `<article class="card"><a class="image" href="index.html?design=${id}"><img src="${esc(p.thumb||p.image)}" alt="${esc(p.alt||p.name+' religious metal sign design by MB1 Advanced Solutions')}" loading="lazy"></a><div class="info"><div class="cat">Religious</div><a class="name" href="index.html?design=${id}">${esc(p.name)}</a><div class="meta">${esc(p.sku||'MB1-'+id)}<br><span class="price">From $49</span> · 8&quot;–48&quot;</div><a class="buy" href="index.html?design=${id}">View &amp; Buy</a></div></article>`}).join('');
+ grid.innerHTML=products.map(p=>{const id=normalizeId(p.design);return `<article class="card"><a class="image" href="index.html?design=${id}"><img src="${esc(p.thumb||p.image)}" alt="${esc(p.alt||p.name+' religious metal sign design by MB1 Advanced Solutions')}" loading="lazy"></a><div class="info"><div class="cat">Religious</div><a class="name" href="index.html?design=${id}">${esc(p.name)}</a><div class="meta">${esc(p.sku||'MB1-'+id)}<br><span class="price">From $65</span> · 8&quot;–48&quot;</div><a class="buy" href="index.html?design=${id}">View &amp; Buy</a></div></article>`}).join('');
 }).catch(()=>{summary.textContent='';empty.style.display='block'});
 </script>
 </body>
