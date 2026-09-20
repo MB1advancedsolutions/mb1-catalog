@@ -1,38 +1,26 @@
-MB1 STRIPE SHIPPING SETUP — V6
+MB1 STRIPE SHIPPING SETUP — PRICING V20 — 2026-09-20
 
-EDIT THESE PAYMENT LINKS IN STRIPE:
+CURRENT BASE PRICES
+8"=$65
+12"=$69
+18"=$119
+24"=$149
+30"=$195
+36"=$265
+48"=$349
 
-8" / $49 LINK
-- Collect billing + shipping address
-- United States allowed
-- Shipping rate: Standard Shipping — $12.95
+STANDARD POLICY
+- Shipping is charged separately for every size.
+- Free shipping is used only for explicit promotional sales.
+- Final shipping should reflect current packed size, packed weight, destination, and current carrier/Pirate Ship rate.
 
-12" / $69 LINK
-- Collect billing + shipping address
-- United States allowed
-- Shipping rate: Standard Shipping — $16.95
+PUBLIC WEBSITE STATUS
+Direct Stripe Payment Links are temporarily bypassed so customers cannot receive the old $49/$109 prices or old fixed/free shipping settings.
 
-18" / $109 LINK
-- Collect billing + shipping address
-- Shipping rate: FREE Standard Shipping — $0.00
-
-24" / $149 LINK
-- Collect billing + shipping address
-- Shipping rate: FREE Standard Shipping — $0.00
-
-30" / $195 LINK
-- Collect billing + shipping address
-- Shipping rate: FREE Standard Shipping — $0.00
-
-36" / $265 LINK
-- Do not expose this as a normal public checkout yet.
-- The V6 catalog does not send customers to this link.
-- Quote oversized shipping first, then collect payment after the destination cost is known.
-
-48" / $349 LINK
-- Do not expose this as a normal public checkout yet.
-- The V6 catalog does not send customers to this link.
-- Quote oversized/freight shipping first, then collect payment after the destination cost is known.
-
-POLICY WORDING
-FREE standard shipping on qualifying orders over $100 within the contiguous United States. Oversized items may require an additional shipping charge.
+BEFORE RE-ENABLING DIRECT PAY NOW
+1. Update/create Stripe prices to the current base prices.
+2. Remove permanent free-shipping settings.
+3. Remove obsolete fixed shipping rates unless intentionally current.
+4. Verify shipping-address collection.
+5. Test all seven sizes.
+6. Replace the retired links in STRIPE_LINK_RECORD.txt.
