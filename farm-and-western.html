@@ -66,8 +66,34 @@ function updateCheckout(){
   const shipping=SHIPPING_MAP[size];
   const base=STRIPE_LINKS[size];
   const checkoutTotal=(typeof price==='number'&&typeof shipping==='number')?price+shipping:null;
-
-  modalTotal.textContent=typeof price==='number'?'(value){
+  modalTotal.textContent=typeof price==='number'?'$'+price.toFixed(2).replace('.00',''):'';
+  if(typeof shipping==='number'&&checkoutTotal!==null){
+    shippingStatus.innerHTML='<strong>Shipping</strong>$'+shipping.toFixed(2)+' standard shipping · $'+checkoutTotal.toFixed(2)+' checkout subtotal before tax.';
+  }else{
+    shippingStatus.innerHTML='<strong>Shipping</strong>Standard shipping is added at Stripe checkout.';
+  }
+  oversizeQuote.style.display='none';
+  if(base&&currentDesign){
+    const ref=safeRef('MB1-'+currentDesign+'_'+size+'_'+color);
+    buyNow.dataset.orderRef=ref;
+    buyNow.textContent=checkoutTotal!==null?'Pay Now — $'+checkoutTotal.toFixed(2)+' before tax':'Pay Now';
+    const join=base.includes('?')?'&':'?';
+    buyNow.href=base+join+'client_reference_id='+encodeURIComponent(ref)+'&utm_content='+encodeURIComponent(ref);
+  }else{
+    buyNow.dataset.orderRef='';
+    buyNow.textContent='Pay Now';
+    buyNow.href='#';
+  }
+}
+function updateCustomizeLink(){
+  if(!currentDesign)return;
+  const params=new URLSearchParams();
+  params.set(CUSTOM_DESIGN_ENTRY,'MB1-'+currentDesign);
+  params.set(CUSTOM_SIZE_ENTRY,modalSize.value+'"');
+  params.set(CUSTOM_COLOR_ENTRY,modalColor.value);
+  customizeBtn.href=CUSTOM_FORM_BASE+'&'+params.toString();
+}
+function normalizeDesignParam(value){
   const raw=String(value||'').trim();
   const match=raw.match(/(?:MB1[-_ ]*)?(\d{1,4})/i);
   return match ? match[1].padStart(4,'0') : '';
@@ -92,7 +118,6 @@ function clearDesignFromAddressBar(){
 function productDataFromCatalog(p){
   return {design:p.design,name:p.name,category:p.category,categories:productCategories(p),sku:p.sku,image:p.image,thumb:p.thumb,images:p.images,alt:p.alt,desc:p.description};
 }
-
 function normalizeGalleryImages(d){
   const raw=(Array.isArray(d.images)&&d.images.length)?d.images:[{url:d.image,thumb:d.thumb||d.image,alt:d.alt||'',type:'main'}];
   const seen=new Set();
